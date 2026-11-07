@@ -2,3 +2,4 @@
 .playwright/
 __pycache__/
 *.py[cod]
+maintenance/kind_checks.json

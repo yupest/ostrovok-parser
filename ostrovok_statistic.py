@@ -47,6 +47,7 @@ def generate_statistics(run_date=None):
                 if ota_hotel_id:
                     hotels_data[ota_hotel_id] = {
                         'name': row.get('name', ''),
+                        'kind': row.get('kind', ''),
                         'collection_status': row.get('collection_status', 'search_found'),
                         'card_status': row.get('card_status', ''),
                         'rooms_number': row.get('rooms_number', '')
@@ -152,6 +153,7 @@ def generate_statistics(run_date=None):
             'ota_hotel_id': ota_hotel_id,
             'name': hotel_info.get('name', ''),
             'date': collection_date,
+            'kind': hotel_info.get('kind', ''),
             'collection_status': collection_status,
             'card_status': hotel_info.get('card_status', ''),
             'rooms_num': str(rooms_num),
@@ -166,6 +168,7 @@ def generate_statistics(run_date=None):
         'ota_hotel_id',
         'name',
         'date',
+        'kind',
         'collection_status',
         'card_status',
         'rooms_num',
@@ -177,7 +180,7 @@ def generate_statistics(run_date=None):
     
     try:
         with open(output_csv, 'w', encoding='utf-8-sig', newline='') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
             writer.writeheader()
             writer.writerows(statistics)
         logger.info("Статистика сохранена в %s", output_csv)

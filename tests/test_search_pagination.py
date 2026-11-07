@@ -26,10 +26,15 @@ class SearchTests(unittest.TestCase):
         state['errors'].extend(errors)
         return state
 
-    def test_url_has_no_type_filter(self):
+    def test_url_uses_hotels_tab_without_type_group(self):
         query = parse_qs(urlparse(self.parser._build_search_url(date(2026, 11, 8), date(2026, 11, 9))).query)
         self.assertNotIn('type_group', query)
+        self.assertEqual(query['type_tab'], ['hotels'])
         self.assertEqual(query['guests'], ['1'])
+
+    def test_property_kind_preserved(self):
+        record=hotel('one');record['static_vm']['kind']='Aparthotel'
+        self.assertEqual(self.parser._extract_hotels_from_json({'hotels':[record]})[0]['kind'],'Aparthotel')
 
     def test_polling_empty_does_not_mean_end(self):
         state = self.parser._new_attempt()

@@ -91,7 +91,8 @@ class OstrovokHotelsDailyParser:
         dates_str = f"{arrival_date.strftime('%d.%m.%Y')}-{departure_date.strftime('%d.%m.%Y')}"
         url = (
             f"{self.base_url}"
-            f"?search=yes"
+            f"?type_tab=hotels"
+            f"&search=yes"
             f"&dates={dates_str}"
             f"&guests=1"
             f"&q={self.region_id}"
@@ -292,6 +293,7 @@ class OstrovokHotelsDailyParser:
                 url = f"https://ostrovok.ru/hotel/russia/irkutsk/mid{master_id}/{ota_hotel_id}"
                 
                 hotel_data = {
+                    "kind": static_vm.get("kind", ""),
                     "city": static_vm.get("city", ""),
                     "ota_hotel_id": ota_hotel_id,
                     "master_id": master_id,
@@ -344,7 +346,7 @@ class OstrovokHotelsDailyParser:
             'latitude',
             'longitude',
             'url',
-            'rooms_number'
+            'rooms_number', 'kind'
         ] + DAILY_FIELDS
         
         try:
@@ -367,7 +369,7 @@ class OstrovokHotelsCatalog:
     FIELDNAMES = [
         'ota_hotel_id', 'master_id', 'name', 'name_en',
         'city', 'address', 'latitude', 'longitude', 'url', 'rooms_number',
-        'first_seen_date', 'last_seen_date',
+        'first_seen_date', 'last_seen_date', 'kind', 'monitoring_scope',
     ] + STATUS_FIELDS
 
     def __init__(self):
@@ -427,6 +429,8 @@ class OstrovokHotelsCatalog:
             # Обновляем поля и дату последнего появления
             if hotel_id in existing:
                 existing[hotel_id].update({
+                    'kind':         hotel.get('kind') or existing[hotel_id].get('kind', ''),
+                    'monitoring_scope': 'included',
                     'name':         hotel.get('name', existing[hotel_id]['name']),
                     'name_en':      hotel.get('name_en', existing[hotel_id]['name_en']),
                     'city':         hotel.get('city', existing[hotel_id]['city']),
@@ -440,6 +444,8 @@ class OstrovokHotelsCatalog:
             # Новый отель
             else:
                 existing[hotel_id] = {
+                    'kind':          hotel.get('kind', ''),
+                    'monitoring_scope': 'included',
                     'ota_hotel_id':   hotel_id,
                     'master_id':      hotel.get('master_id', ''),
                     'name':           hotel.get('name', ''),

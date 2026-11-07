@@ -1,0 +1,39 @@
+{
+  "collection_date": "2026-11-07",
+  "stay_date": "2026-11-08",
+  "catalog_types": {
+    "HOTEL": 165,
+    "LODGING_HOUSES": 73,
+    "APARTMENT": 998,
+    "GUESTHOUSE": 48,
+    "MINI_HOTEL": 22,
+    "UNKNOWN": 7,
+    "COTTAGE": 59,
+    "RESORT": 2,
+    "GLAMPING": 3,
+    "HOSTEL": 16,
+    "SANATORIUM": 7,
+    "APART_HOTEL": 3,
+    "BOUTIQUE": 6,
+    "CAMPING": 18,
+    "VILLA_AND_BUNGALOWS": 6,
+    "LIVING_QUARTERS": 2
+  },
+  "files": {
+    "hotels": {
+      "before": 1338,
+      "after": 357,
+      "removed_rows": 981
+    },
+    "rooms": {
+      "before": 2035,
+      "after": 1027,
+      "removed_rows": 1008
+    },
+    "statistics": {
+      "before": 1338,
+      "after": 357,
+      "removed_rows": 981
+    }
+  }
+}

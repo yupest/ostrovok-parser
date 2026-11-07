@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from datetime import date
 from unittest.mock import Mock, patch
-from card_status import CardChecker, classify_card, reconcile_catalog
+from card_status import CardChecker, classify_card, reconcile_catalog, card_kind
 import ostrovok_statistic
 from ostrovok_rooms import OstrovokRoomsDailyParser
 
@@ -24,6 +24,11 @@ class CardTests(unittest.TestCase):
         checker.session.get.side_effect=[Mock(status_code=404),Mock(status_code=200,url='https://ostrovok.ru/hotel/mid123/h/',text='<title>Отель</title><link rel="canonical" href="https://ostrovok.ru/hotel/mid123/h/">')]
         self.assertEqual(checker({'ota_hotel_id':'h','master_id':'123','url':'https://ostrovok.ru/old'})[0],'active')
 
+    def test_card_type_requires_matching_master_id(self):
+        response=Mock(text='<script id="__NEXT_DATA__">{"props":{"pageProps":{"hotel":{"masterId":"123","facts":{"kind":"APARTMENT"}}}}}</script>')
+        self.assertEqual(card_kind(response,'123'),'APARTMENT')
+        self.assertEqual(card_kind(response,'999'),'')
+
     def test_missing_active_unknown_and_inactive(self):
         catalog={x:{'ota_hotel_id':x,'card_status':'active'} for x in ['active','gone','error','seen']}
         catalog['already_gone']={'ota_hotel_id':'already_gone','card_status':'inactive'}
@@ -38,6 +43,21 @@ class CardTests(unittest.TestCase):
         # Inactive stays skipped tomorrow, but a reappearance reactivates it.
         checker.reset_mock();checker.side_effect=None;checker.return_value=('active','ok','');reconcile_catalog(catalog,[{'ota_hotel_id':'gone'}],checker,'2026-11-08')
         self.assertEqual(catalog['gone']['card_status'],'active')
+
+    def test_apartment_is_not_assumed_full(self):
+        catalog={'flat':{'ota_hotel_id':'flat','kind':'APARTMENT','card_status':'active'}}
+        checker=Mock()
+        self.assertEqual(reconcile_catalog(catalog,[],checker,'2026-11-08'),[])
+        self.assertEqual(reconcile_catalog(catalog,[dict(catalog['flat'])],checker,'2026-11-08'),[])
+        checker.assert_not_called()
+        self.assertEqual(catalog['flat']['monitoring_scope'],'excluded_apartment')
+
+    def test_apartment_discovered_during_card_check_is_excluded(self):
+        catalog={'flat':{'ota_hotel_id':'flat','card_status':'active'}}
+        def check(h):
+            h['kind']='APARTMENT'
+            return 'active','ok',''
+        self.assertEqual(reconcile_catalog(catalog,[],check,'2026-11-08'),[])
 
     def test_missing_rows_not_requested_as_room_offers(self):
         parser=OstrovokRoomsDailyParser();parser._search_hotel=Mock()

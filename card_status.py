@@ -1,5 +1,7 @@
 """Check missing catalog cards separately from daily search availability."""
 import logging
+import json
+from accommodation_types import is_apartment
 import re
 from html.parser import HTMLParser
 from urllib.parse import urlparse
@@ -12,19 +14,33 @@ DAILY_FIELDS = ['collection_status'] + STATUS_FIELDS
 
 class Metadata(HTMLParser):
     def __init__(self, text):
-        super().__init__(); self.canonical = ''; self.title = ''; self.in_title = False
+        super().__init__(); self.canonical = ''; self.title = ''; self.in_title = False; self.in_next = False; self.next_data = ''
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == 'link' and a.get('rel') == 'canonical': self.canonical = a.get('href', '')
         if tag == 'title': self.in_title = True
+        if tag == 'script' and a.get('id') == '__NEXT_DATA__': self.in_next = True
 
     def handle_endtag(self, tag):
         if tag == 'title': self.in_title = False
+        if tag == 'script': self.in_next = False
 
     def handle_data(self, text):
         if self.in_title: self.title += text
+        if self.in_next: self.next_data += text
+
+
+def card_kind(response, master_id):
+    try:
+        meta = Metadata(response.text)
+        hotel = json.loads(meta.next_data)['props']['pageProps']['hotel']
+        if str(hotel.get('masterId')) == str(master_id):
+            return str(hotel.get('facts', {}).get('kind') or '')
+    except (ValueError, KeyError, TypeError):
+        pass
+    return ''
 
 
 def classify_card(response, master_id):
@@ -62,7 +78,10 @@ class CardChecker:
                 except requests.RequestException:
                     result = ('unknown', 'request_failed', '')
                 if result[0] != 'unknown': break
-            if result[0] == 'active': return result
+            if result[0] == 'active':
+                kind = card_kind(response, master)
+                if kind: hotel['kind'] = kind
+                return result
             results.append(result)
         # A broken city-specific route alone cannot deactivate a valid property.
         if all(r[0] == 'inactive' for r in results): return results[-1]
@@ -72,9 +91,12 @@ class CardChecker:
 def reconcile_catalog(existing, observed, checker, today):
     """Append active missing cards as assumed full, never confuse errors with deletion."""
     daily = [dict(h, collection_status='search_found', card_status='active',
-                  card_checked_date=today, card_check_reason='found_in_search') for h in observed]
+                  card_checked_date=today, card_check_reason='found_in_search') for h in observed if not is_apartment(h.get('kind'))]
     seen = {h['ota_hotel_id'] for h in observed}
     for hotel_id, hotel in existing.items():
+        if is_apartment(hotel.get('kind')):
+            hotel['monitoring_scope'] = 'excluded_apartment'
+            continue
         if hotel_id in seen:
             hotel.update(card_status='active', card_checked_date=today, card_check_reason='found_in_search')
             continue
@@ -82,6 +104,10 @@ def reconcile_catalog(existing, observed, checker, today):
         status, reason, canonical = checker(hotel)
         hotel.update(card_status=status, card_checked_date=today, card_check_reason=reason)
         if canonical: hotel['url'] = canonical
+        if is_apartment(hotel.get('kind')):
+            hotel['monitoring_scope'] = 'excluded_apartment'
+            continue
+        hotel['monitoring_scope'] = 'included'
         logger.info('Карточка %s: %s (%s)', hotel_id, status, reason)
         if status != 'inactive':
             row = dict(hotel)
