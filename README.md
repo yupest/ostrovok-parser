@@ -100,10 +100,11 @@ PLAYWRIGHT_BROWSERS_PATH=.playwright .venv/bin/python ostrovok_rooms.py
 
 ## GitHub Actions
 
-Workflow `Ostrovok Parser` запускается ежедневно в 08:00 UTC (16:00 по Иркутску),
-и вручную через Run workflow. Отправка кода сама по себе не запускает сбор.
-Тесты можно запустить локально командой выше. Для коммита результатов workflow
-должен иметь право записи Contents (Settings → Actions → General → Workflow permissions).
-Секрет `PARSERS_REPO_TOKEN` остаётся нужен для существующей доставки в MALISMF/parsers;
-без него сбор сохраняется в этом репозитории, а внешняя доставка пропускается.
-Telegram-секреты необязательны. У репозитория должен быть включён GitHub Actions.
+Workflow `Ostrovok Parser` запускается ежедневно в 08:00 UTC (16:00 по Иркутску)
+и вручную через Run workflow. Тесты выполняются перед сбором, параллельные сборы
+сериализованы. Лимит задания — 180 минут.
+
+Пользовательские Secrets не требуются. Checkout использует автоматически созданный
+GitHub токен; `permissions: contents: write` позволяет сохранять CSV в этом репозитории.
+Telegram и отправка в MALISMF/parsers отключены. Данные сохраняются в daily/ и catalog/.
+Право локального PAT менять файл workflow — отдельное от токена самого задания Actions.
