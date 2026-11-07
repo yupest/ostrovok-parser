@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import time
+import json
 import sys
 import os
 import csv
@@ -31,6 +32,12 @@ class OstrovokHotelsDailyParser:
         self.all_hotels = []
         self.current_dir = Path(__file__).parent
         self.ci = _is_ci()
+        self.page_timeout_ms = int(os.environ.get("SEARCH_PAGE_TIMEOUT_MS", "90000"))
+        self.page_retries = int(os.environ.get("SEARCH_PAGE_RETRIES", "3"))
+        self.max_pages = int(os.environ.get("SEARCH_MAX_PAGES", "500"))
+        self._attempt = None
+        self._request_attempts = {}
+        self.page_diagnostics = []
         if self.ci:
             logger.info("Режим CI: увеличенные таймауты и ожидание networkidle.")
     
@@ -66,8 +73,6 @@ class OstrovokHotelsDailyParser:
             
             self._setup_response_interceptor(page)
             self._parse_all_pages_with_pagination(page, search_url)
-            # Даём время запоздалым ответам API прийти до закрытия (в CI дольше)
-            time.sleep(15 if self.ci else 8)
             browser.close()
         
         if self.all_hotels:
@@ -75,7 +80,7 @@ class OstrovokHotelsDailyParser:
             self._save_to_csv()
             logger.info("Парсинг завершён. Всего обработано %s отелей.", len(self.all_hotels))
         else:
-            logger.warning("Не удалось извлечь данные об отелях.")
+            raise RuntimeError("Completed search returned no hotels; refusing to run rooms parser on an old daily file")
         
         return self.all_hotels
             
@@ -84,96 +89,137 @@ class OstrovokHotelsDailyParser:
         dates_str = f"{arrival_date.strftime('%d.%m.%Y')}-{departure_date.strftime('%d.%m.%Y')}"
         url = (
             f"{self.base_url}"
-            f"?type_group=hotel"
-            f"&search=yes"
+            f"?search=yes"
             f"&dates={dates_str}"
             f"&guests=1"
             f"&q={self.region_id}"
         )
         return url
     
+    def _new_attempt(self):
+        return {"hotels": {}, "finished": False, "total": None, "errors": [], "responses": 0}
+
+    def _consume_search_response(self, state, status, payload):
+        """Accumulate polling batches; an empty unfinished response is not EOF."""
+        state["responses"] += 1
+        if status != 200:
+            state["errors"].append(f"HTTP {status}")
+            return
+        if not isinstance(payload, dict) or "hotels" not in payload or (payload["hotels"] is not None and not isinstance(payload["hotels"], list)):
+            state["errors"].append("Invalid response: hotels must be a list")
+            return
+        if payload.get("error") or payload.get("err"):
+            state["errors"].append("API error in HTTP 200 response")
+            return
+        extracted = self._extract_hotels_from_json(payload)
+        if len(extracted) != len(payload["hotels"] or []):
+            state["errors"].append("Some hotel records could not be parsed")
+            return
+        for hotel in extracted:
+            state["hotels"][(hotel["ota_hotel_id"], hotel["master_id"])] = hotel
+        if payload.get("search_finished") is True:
+            total = payload.get("total_av_hotels")
+            if isinstance(total, bool) or not isinstance(total, int) or total < 0:
+                state["errors"].append("Missing/invalid total_av_hotels in completed search")
+                return
+            state["total"] = total
+            state["finished"] = True
+
     def _setup_response_interceptor(self, page):
-        """Перехват ответов от API Ostrovok"""
+        def is_search(request):
+            return request.method == "POST" and self.api_endpoint in request.url
+
+        def handle_request(request):
+            if is_search(request) and self._attempt is not None:
+                self._request_attempts[request] = self._attempt
+
         def handle_response(response):
-            if (response.request.method == "POST" and 
-                self.api_endpoint in response.url and
-                response.status == 200 and
-                "session=" in response.url):
-                
-                try:
-                    if "json" in response.headers.get("content-type", "").lower():
-                        json_data = response.json()
-                        
-                        if isinstance(json_data, dict) and "hotels" in json_data:
-                            hotels = json_data.get("hotels")
-                            if hotels and isinstance(hotels, list) and len(hotels) > 0:
-                                extracted_hotels = self._extract_hotels_from_json(json_data)
-                                if extracted_hotels:
-                                    self.all_hotels.extend(extracted_hotels)
-                                    logger.info("Перехвачено и извлечено %s отелей. Всего: %s", len(extracted_hotels), len(self.all_hotels))
-                except Exception as e:
-                    msg = str(e)
-                    if ("No resource with given identifier" not in msg and "getResponseBody" not in msg
-                            and "Target page, context or browser has been closed" not in msg):
-                        logger.error("Ошибка разбора ответа API: %s", e)
-        
-        page.on("response", handle_response)
-    
-    def _parse_all_pages_with_pagination(self, page, base_search_url):
-        """Парсинг всех страниц с пагинацией"""
-        current_page = 1
-        max_pages = 100
-        
-        while current_page <= max_pages:
-            hotels_before = len(self.all_hotels)
-            
-            if current_page == 1:
-                page_url = base_search_url
-            else:
-                page_url = self._add_page_to_url(base_search_url, current_page)
-            
-            logger.info("--- Страница %s ---", current_page)
-            
-            goto_timeout = 60000 if self.ci else 50000
-            
-            def _load_page_and_wait_for_api():
-                """Переход на страницу + в CI ожидание networkidle (все запросы страницы завершены)."""
-                try:
-                    page.goto(page_url, wait_until="load", timeout=goto_timeout)
-                except Exception as e:
-                    logger.warning("[Страница %s] goto: %s", current_page, e)
-                if self.ci:
-                    try:
-                        page.wait_for_load_state("networkidle", timeout=45000)
-                    except Exception:
-                        pass
-                time.sleep(2 if self.ci else 1)
-            
+            if not is_search(response.request):
+                return
+            state = self._request_attempts.pop(response.request, None)
+            # Requests from previous navigations cannot complete the current page.
+            if state is None or state is not self._attempt:
+                return
             try:
-                _load_page_and_wait_for_api()
-            except Exception as e:
-                logger.warning("[Страница %s] Загрузка: %s", current_page, e)
-            
-            # Дожидаемся появления отелей (в CI дольше — медленная сеть)
-            max_wait_time = 45 if self.ci else 20
-            start_time = time.time()
-            while len(self.all_hotels) == hotels_before and (time.time() - start_time) < max_wait_time:
-                time.sleep(0.5)
-                if len(self.all_hotels) > hotels_before:
+                payload = response.json() if response.status == 200 else None
+                self._consume_search_response(state, response.status, payload)
+            except Exception as exc:
+                state["errors"].append(f"Response decode failed: {type(exc).__name__}")
+
+        def handle_failure(request):
+            state = self._request_attempts.pop(request, None)
+            if state is self._attempt and state is not None:
+                state["errors"].append("Search request failed")
+
+        page.on("request", handle_request)
+        page.on("response", handle_response)
+        page.on("requestfailed", handle_failure)
+
+    def _fetch_search_page(self, page, page_url):
+        state = self._new_attempt()
+        self._attempt = state
+        # Old requests are ignored, and do not accumulate over a long run.
+        self._request_attempts.clear()
+        try:
+            response = page.goto(page_url, wait_until="domcontentloaded", timeout=self.page_timeout_ms)
+            if response is not None and response.status >= 400:
+                state["errors"].append(f"Document HTTP {response.status}")
+            deadline = time.monotonic() + self.page_timeout_ms / 1000
+            while not state["finished"] and time.monotonic() < deadline:
+                # Playwright must pump events; time.sleep prevents response callbacks.
+                page.wait_for_timeout(250)
+            if not state["finished"]:
+                state["errors"].append("Timed out waiting for search_finished=true")
+        except Exception as exc:
+            state["errors"].append(f"Page load failed: {type(exc).__name__}")
+        finally:
+            self._attempt = None
+        return state
+
+    def _write_search_diagnostics(self):
+        directory = self.current_dir / "logs"
+        directory.mkdir(parents=True, exist_ok=True)
+        path = directory / f"{self._run_date().isoformat()}-search.json"
+        path.write_text(json.dumps(self.page_diagnostics, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    def _parse_all_pages_with_pagination(self, page, base_search_url):
+        """Only a completed, reconciled API response ends pagination successfully."""
+        self.all_hotels = []
+        self.page_diagnostics = []
+        seen = set()
+        for current_page in range(1, self.max_pages + 1):
+            page_url = base_search_url if current_page == 1 else self._add_page_to_url(base_search_url, current_page)
+            for attempt in range(1, self.page_retries + 1):
+                logger.info("Страница %s, попытка %s/%s", current_page, attempt, self.page_retries)
+                state = self._fetch_search_page(page, page_url)
+                new = {key: value for key, value in state["hotels"].items() if key not in seen}
+                errors = list(state["errors"])
+                if not state["finished"]:
+                    errors.append("Search not completed")
+                elif state["total"] == 0 and (seen or state["hotels"]):
+                    errors.append("Zero total contradicts already received hotels")
+                elif not new and state["total"] != 0:
+                    errors.append("No new hotels before reported total reached")
+                diagnostic = {"page": current_page, "attempt": attempt,
+                              "search_finished": state["finished"], "total_av_hotels": state["total"],
+                              "page_unique": len(state["hotels"]), "new_unique": len(new),
+                              "collected_before": len(seen), "responses": state["responses"], "errors": errors}
+                self.page_diagnostics.append(diagnostic)
+                self._write_search_diagnostics()
+                if not errors:
+                    self.all_hotels.extend(new.values())
+                    seen.update(new)
+                    logger.info("Страница %s: новых %s, всего %s / %s", current_page, len(new), len(seen), state["total"])
+                    if len(seen) >= state["total"]:
+                        logger.info("Поиск завершён: собрано %s уникальных объектов, API сообщает %s", len(seen), state["total"])
+                        return
                     break
-            hotels_added = len(self.all_hotels) - hotels_before
-            
-            if hotels_added > 0:
-                logger.info("Добавлено %s отелей со страницы %s. Переход на следующую страницу...", hotels_added, current_page)
-            else:
-                logger.warning("На странице %s отелей не получено. Конец списка.", current_page)
-                break
-            
-            current_page += 1
-            time.sleep(2.5 if self.ci else 1.5)
-        
-        logger.info("=== Всего собрано отелей со всех страниц: %s ===", len(self.all_hotels))
-    
+                logger.warning("Страница %s не подтверждена: %s", current_page, "; ".join(errors))
+                if attempt == self.page_retries:
+                    raise RuntimeError(f"Page {current_page} failed after {attempt} attempts; partial data will not be saved")
+                page.wait_for_timeout(2000 * attempt)
+        raise RuntimeError(f"SEARCH_MAX_PAGES={self.max_pages} reached before all hotels were collected")
+
     def _add_page_to_url(self, url, page_number):
         """Добавление номера страницы к URL"""
         parsed = urlparse(url)
@@ -280,6 +326,7 @@ class OstrovokHotelsDailyParser:
             logger.info("Сохранено %s отелей в %s", len(self.all_hotels), csv_filename)
         except Exception as e:
             logger.error("Ошибка при сохранении CSV: %s", e)
+            raise
 
 
 class OstrovokHotelsCatalog:
