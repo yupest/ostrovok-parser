@@ -47,6 +47,8 @@ def generate_statistics(run_date=None):
                 if ota_hotel_id:
                     hotels_data[ota_hotel_id] = {
                         'name': row.get('name', ''),
+                        'collection_status': row.get('collection_status', 'search_found'),
+                        'card_status': row.get('card_status', ''),
                         'rooms_number': row.get('rooms_number', '')
                     }
     except Exception as e:
@@ -130,6 +132,19 @@ def generate_statistics(run_date=None):
                 free_rooms_amount, rooms_num, ota_hotel_id, effective_rooms_num,
             )
                 
+        collection_status = hotel_info.get('collection_status', 'search_found')
+        if collection_status == 'assumed_full_missing_search':
+            free_rooms_amount = 0
+            available_rooms_percent = 0.0
+            max_capacity = 0
+            min_price = None
+        elif collection_status == 'card_check_error' or ota_hotel_id not in rooms_stats:
+            # A failed card/rates request is unknown, never evidence of full occupancy.
+            free_rooms_amount = ''
+            available_rooms_percent = ''
+            max_capacity = ''
+            min_price = None
+
         # Форматируем минимальную цену
         min_price_str = f"{min_price:.2f}" if min_price is not None else ""
         
@@ -137,6 +152,8 @@ def generate_statistics(run_date=None):
             'ota_hotel_id': ota_hotel_id,
             'name': hotel_info.get('name', ''),
             'date': collection_date,
+            'collection_status': collection_status,
+            'card_status': hotel_info.get('card_status', ''),
             'rooms_num': str(rooms_num),
             'free_rooms_amount': str(free_rooms_amount),
             'max_capacity': str(max_capacity),
@@ -149,6 +166,8 @@ def generate_statistics(run_date=None):
         'ota_hotel_id',
         'name',
         'date',
+        'collection_status',
+        'card_status',
         'rooms_num',
         'free_rooms_amount',
         'max_capacity',

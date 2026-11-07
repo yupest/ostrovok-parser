@@ -321,6 +321,9 @@ class OstrovokRoomsDailyParser:
 
     def _process_hotel(self, hotel_row, arrival_date, departure_date):
         """Обрабатывает один отель: извлекает ID, запрашивает данные"""
+        if hotel_row.get("collection_status") in ('assumed_full_missing_search', 'card_check_error'):
+            # Missing search cards are classified upstream; do not invent room offers.
+            return []
         hotel_url = hotel_row.get("show_rooms_url") or hotel_row.get("url") or hotel_row.get("detail_url")
         hotel_name = hotel_row.get("ota_hotel_id") or hotel_row.get("name") or "unknown"
         hotel_id = self._extract_hotel_id(hotel_url) if hotel_url else None
@@ -372,8 +375,8 @@ class OstrovokRoomsDailyParser:
                 rooms_count = sum(1 for r in rooms_data if r.get("rg_hash"))
                 logger.info("Сохранено %s номеров для %s", rooms_count, hotel_row.get('hotel_name') or hotel_row.get('name', 'unknown'))
         
+        self._save_to_csv(all_rooms_data)
         if all_rooms_data:
-            self._save_to_csv(all_rooms_data)
             logger.info("Парсинг завершён. Всего обработано %s номеров.", len(all_rooms_data))
         else:
             logger.warning("Не удалось извлечь данные о номерах.")
@@ -382,9 +385,6 @@ class OstrovokRoomsDailyParser:
     
     def _save_to_csv(self, rooms_data):
         """Сохраняет данные номеров в CSV файл (daily/rooms/YYYY-MM-DD.csv)"""
-        if not rooms_data:
-            return
-        
         run_date = self._run_date()
         output_dir = self.current_dir / 'daily' / 'rooms'
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -416,6 +416,7 @@ class OstrovokRoomsDailyParser:
             logger.info("Сохранено %s номеров в %s", len(rooms_data), csv_filename)
         except Exception as e:
             logger.error("Ошибка при сохранении CSV: %s", e)
+            raise
 
 
 def _run_date_for_log():

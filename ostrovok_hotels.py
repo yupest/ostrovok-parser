@@ -11,6 +11,7 @@ from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
+from card_status import STATUS_FIELDS, DAILY_FIELDS, CardChecker, reconcile_catalog
 from log_config import setup_logging, get_log_file_path, send_telegram_summary
 
 # Настройка stdout для корректного вывода Юникода и сброс буфера в CI
@@ -344,11 +345,11 @@ class OstrovokHotelsDailyParser:
             'longitude',
             'url',
             'rooms_number'
-        ]
+        ] + DAILY_FIELDS
         
         try:
             with open(csv_filename, 'w', encoding='utf-8-sig', newline='') as csv_file:
-                writer = csv.DictWriter(csv_file, fieldnames=fieldnames, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames, extrasaction="ignore", delimiter=',', quoting=csv.QUOTE_MINIMAL)
                 writer.writeheader()
                 for hotel in self.all_hotels:
                     writer.writerow(hotel)
@@ -367,7 +368,7 @@ class OstrovokHotelsCatalog:
         'ota_hotel_id', 'master_id', 'name', 'name_en',
         'city', 'address', 'latitude', 'longitude', 'url', 'rooms_number',
         'first_seen_date', 'last_seen_date',
-    ]
+    ] + STATUS_FIELDS
 
     def __init__(self):
         self.current_dir = Path(__file__).parent
@@ -394,6 +395,7 @@ class OstrovokHotelsCatalog:
                         existing[hotel_id] = row
         except Exception as e:
             logger.error("Ошибка при чтении каталога %s: %s", self.catalog_path, e)
+            raise
         return existing
 
     def _save(self, hotels: dict):
@@ -407,6 +409,7 @@ class OstrovokHotelsCatalog:
             logger.info("Каталог сохранён: %s отелей → %s", len(hotels), self.catalog_path)
         except Exception as e:
             logger.error("Ошибка при сохранении каталога: %s", e)
+            raise
 
     def update(self, parsed_hotels: list):
         """Обновляет каталог на основе последнего списка отелей.
@@ -474,6 +477,12 @@ if __name__ == "__main__":
     
     catalog = OstrovokHotelsCatalog()
     total, new_count = catalog.update(result)
+    existing = catalog._load_existing()
+    parser.all_hotels = reconcile_catalog(existing, result, CardChecker(), run_date.isoformat())
+    catalog._save(existing)
+    parser._save_to_csv()
+    logger.info("Дневной список после проверки каталога: %s объектов", len(parser.all_hotels))
+
 
     send_telegram_summary(
         f"Ostrovok: парсинг отелей завершён. Отелей: {len(result)}."
