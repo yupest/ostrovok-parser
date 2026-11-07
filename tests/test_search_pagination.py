@@ -60,6 +60,33 @@ class SearchTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self.parser._parse_all_pages_with_pagination(Mock(), 'https://example.com/')
 
+    def test_reported_1346_with_1344_unique_and_confirmed_end(self):
+        pages = [self.state([str(i) for i in range(page * 20, (page + 1) * 20)], total=1346)
+                 for page in range(67)]
+        # Two listings move between pages and are repeated, as in a changing ranking.
+        pages[1] = self.state([str(i) for i in range(18, 38)], total=1346)
+        pages.append(self.state([str(i) for i in range(1340, 1346)], total=1346))
+        pages.extend([self.state(total=1346) for _ in range(3)])
+        self.parser._fetch_search_page = Mock(side_effect=pages)
+        self.parser._parse_all_pages_with_pagination(Mock(), 'https://example.com/')
+        self.assertEqual(len(self.parser.all_hotels), 1344)
+        self.assertEqual(self.parser.page_diagnostics[-1]['outcome'], 'completed_with_count_drift')
+        self.assertEqual(self.parser.page_diagnostics[-1]['count_gap'], 2)
+
+    def test_network_errors_after_short_page_are_not_eof(self):
+        pages = [self.state(['a', 'b'], total=4), self.state(['c'], total=4)]
+        pages.extend([self.state(total=4, errors=['HTTP 503']) for _ in range(3)])
+        self.parser._fetch_search_page = Mock(side_effect=pages)
+        with self.assertRaises(RuntimeError):
+            self.parser._parse_all_pages_with_pagination(Mock(), 'https://example.com/')
+
+    def test_large_gap_not_accepted_as_end(self):
+        pages = [self.state(['a', 'b'], total=100), self.state(['c'], total=100)]
+        pages.extend([self.state(total=100) for _ in range(3)])
+        self.parser._fetch_search_page = Mock(side_effect=pages)
+        with self.assertRaises(RuntimeError):
+            self.parser._parse_all_pages_with_pagination(Mock(), 'https://example.com/')
+
     def test_explicit_completed_zero_is_valid(self):
         self.parser._fetch_search_page = Mock(return_value=self.state(total=0))
         self.parser._parse_all_pages_with_pagination(Mock(), 'https://example.com/')

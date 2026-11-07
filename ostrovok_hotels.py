@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 import time
 import json
+import math
 import sys
 import os
 import csv
@@ -187,26 +188,54 @@ class OstrovokHotelsDailyParser:
         self.all_hotels = []
         self.page_diagnostics = []
         seen = set()
+        max_page_size = 0
+        previous_page_size = 0
         for current_page in range(1, self.max_pages + 1):
             page_url = base_search_url if current_page == 1 else self._add_page_to_url(base_search_url, current_page)
+            confirmed_empty = 0
             for attempt in range(1, self.page_retries + 1):
                 logger.info("Страница %s, попытка %s/%s", current_page, attempt, self.page_retries)
                 state = self._fetch_search_page(page, page_url)
                 new = {key: value for key, value in state["hotels"].items() if key not in seen}
                 errors = list(state["errors"])
+                # The search is live: availability and ranking can change between pages.
+                # Allow only a small, explicitly logged count drift after a short last
+                # page and repeated clean empty responses beyond the advertised last page.
+                total = state["total"]
+                gap = max(0, total - len(seen)) if total is not None else 0
+                drift_limit = max(2, min(20, math.ceil((total or 0) * 0.01)))
+                terminal_candidate = (
+                    not errors and state["finished"] and total is not None and total > 0
+                    and not state["hotels"] and max_page_size > 0
+                    and 0 < previous_page_size < max_page_size
+                    and (current_page - 1) * max_page_size >= total
+                    and 0 < gap <= drift_limit
+                )
+                confirmed_empty = confirmed_empty + 1 if terminal_candidate else 0
+                confirmed_end = confirmed_empty >= max(2, self.page_retries)
                 if not state["finished"]:
                     errors.append("Search not completed")
-                elif state["total"] == 0 and (seen or state["hotels"]):
+                elif total == 0 and (seen or state["hotels"]):
                     errors.append("Zero total contradicts already received hotels")
-                elif not new and state["total"] != 0:
-                    errors.append("No new hotels before reported total reached")
+                elif not new and total != 0 and not confirmed_end:
+                    errors.append("Confirming empty last page" if terminal_candidate else "No new hotels before reported total reached")
                 diagnostic = {"page": current_page, "attempt": attempt,
                               "search_finished": state["finished"], "total_av_hotels": state["total"],
                               "page_unique": len(state["hotels"]), "new_unique": len(new),
-                              "collected_before": len(seen), "responses": state["responses"], "errors": errors}
+                              "collected_before": len(seen), "responses": state["responses"], "errors": errors,
+                              "confirmed_empty": confirmed_empty, "count_gap": gap,
+                              "outcome": "completed_with_count_drift" if confirmed_end else "page"}
                 self.page_diagnostics.append(diagnostic)
                 self._write_search_diagnostics()
+                if confirmed_end:
+                    logger.warning("Конец выдачи подтверждён %s завершёнными пустыми ответами. "
+                                   "Собрано %s, API сообщает %s; расхождение %s. "
+                                   "Сохраняем фактически найденные объекты без добавления пропущенных.",
+                                   confirmed_empty, len(seen), total, gap)
+                    return
                 if not errors:
+                    previous_page_size = len(state["hotels"])
+                    max_page_size = max(max_page_size, previous_page_size)
                     self.all_hotels.extend(new.values())
                     seen.update(new)
                     logger.info("Страница %s: новых %s, всего %s / %s", current_page, len(new), len(seen), state["total"])
