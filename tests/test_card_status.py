@@ -33,15 +33,16 @@ class CardTests(unittest.TestCase):
         catalog={x:{'ota_hotel_id':x,'card_status':'active'} for x in ['active','gone','error','seen']}
         catalog['already_gone']={'ota_hotel_id':'already_gone','card_status':'inactive'}
         checker=Mock(side_effect=[('active','ok',''),('inactive','404',''),('unknown','503','')])
-        daily=reconcile_catalog(catalog,[{'ota_hotel_id':'seen'}],checker,'2026-11-07')
+        future=Mock(return_value={'future_availability_status':'available'})
+        daily=reconcile_catalog(catalog,[{'ota_hotel_id':'seen'}],checker,'2026-11-07',future)
         rows={h['ota_hotel_id']:h for h in daily}
         self.assertEqual(checker.call_count,3)
-        self.assertEqual(rows['active']['collection_status'],'assumed_full_missing_search')
+        self.assertEqual(rows['active']['collection_status'],'assumed_full_future_available')
         self.assertEqual(rows['error']['collection_status'],'card_check_error')
         self.assertNotIn('gone',rows)
         self.assertEqual(catalog['gone']['card_status'],'inactive')
         # Inactive stays skipped tomorrow, but a reappearance reactivates it.
-        checker.reset_mock();checker.side_effect=None;checker.return_value=('active','ok','');reconcile_catalog(catalog,[{'ota_hotel_id':'gone'}],checker,'2026-11-08')
+        checker.reset_mock();checker.side_effect=None;checker.return_value=('active','ok','');reconcile_catalog(catalog,[{'ota_hotel_id':'gone'}],checker,'2026-11-08',future)
         self.assertEqual(catalog['gone']['card_status'],'active')
 
     def test_apartment_is_not_assumed_full(self):
@@ -61,7 +62,7 @@ class CardTests(unittest.TestCase):
 
     def test_missing_rows_not_requested_as_room_offers(self):
         parser=OstrovokRoomsDailyParser();parser._search_hotel=Mock()
-        for status in ['assumed_full_missing_search','card_check_error']:
+        for status in ['assumed_full_future_available','no_future_offers','future_check_error','card_check_error']:
             self.assertEqual(parser._process_hotel({'collection_status':status},date.today(),date.today()),[])
         parser._search_hotel.assert_not_called()
 
@@ -71,7 +72,7 @@ class CardTests(unittest.TestCase):
             for folder in ['hotels','rooms']: (root/'daily'/folder).mkdir(parents=True)
             with (root/'daily/hotels'/f'{day}.csv').open('w') as f:
                 w=csv.DictWriter(f,fieldnames=['ota_hotel_id','name','rooms_number','collection_status','card_status']);w.writeheader()
-                for key,status in [('full','assumed_full_missing_search'),('error','card_check_error'),('request_failed','search_found')]:
+                for key,status in [('full','assumed_full_future_available'),('error','card_check_error'),('request_failed','search_found'),('legacy','assumed_full_missing_search'),('seasonal','no_future_offers'),('control_failed','future_check_error')]:
                     w.writerow(dict(ota_hotel_id=key,name=key,rooms_number=38,collection_status=status,card_status='active'))
             (root/'daily/rooms'/f'{day}.csv').write_text('ota_hotel_id,allotment,capacity,price_rub_min\n')
             with patch.object(ostrovok_statistic,'__file__',str(root/'ostrovok_statistic.py')):
@@ -81,5 +82,8 @@ class CardTests(unittest.TestCase):
             self.assertEqual(rows['full']['free_rooms_amount'],'0')
             self.assertEqual(rows['error']['available_rooms_percent'],'')
             self.assertEqual(rows['request_failed']['available_rooms_percent'],'')
+            self.assertEqual(rows['legacy']['available_rooms_percent'],'')
+            self.assertEqual(rows['seasonal']['available_rooms_percent'],'')
+            self.assertEqual(rows['control_failed']['available_rooms_percent'],'')
 
 if __name__=='__main__': unittest.main()

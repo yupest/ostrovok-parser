@@ -6,6 +6,7 @@ from pathlib import Path
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 from collections import defaultdict
+from future_availability import CONTROL_FIELDS, ASSUMED_FULL, EXCLUDED_STATUSES
 from log_config import setup_logging, get_log_file_path, send_telegram_summary
 
 # Настройка stdout для корректного вывода Юникода
@@ -50,7 +51,8 @@ def generate_statistics(run_date=None):
                         'kind': row.get('kind', ''),
                         'collection_status': row.get('collection_status', 'search_found'),
                         'card_status': row.get('card_status', ''),
-                        'rooms_number': row.get('rooms_number', '')
+                        'rooms_number': row.get('rooms_number', ''),
+                        **{key: row.get(key, '') for key in CONTROL_FIELDS}
                     }
     except Exception as e:
         logger.error("Ошибка при чтении %s: %s", hotels_csv, e)
@@ -134,12 +136,12 @@ def generate_statistics(run_date=None):
             )
                 
         collection_status = hotel_info.get('collection_status', 'search_found')
-        if collection_status == 'assumed_full_missing_search':
+        if collection_status == ASSUMED_FULL:
             free_rooms_amount = 0
             available_rooms_percent = 0.0
             max_capacity = 0
             min_price = None
-        elif collection_status == 'card_check_error' or ota_hotel_id not in rooms_stats:
+        elif collection_status in EXCLUDED_STATUSES or collection_status == 'assumed_full_missing_search' or ota_hotel_id not in rooms_stats:
             # A failed card/rates request is unknown, never evidence of full occupancy.
             free_rooms_amount = ''
             available_rooms_percent = ''
@@ -155,6 +157,7 @@ def generate_statistics(run_date=None):
             'date': collection_date,
             'kind': hotel_info.get('kind', ''),
             'collection_status': collection_status,
+            **{key: hotel_info.get(key, '') for key in CONTROL_FIELDS},
             'card_status': hotel_info.get('card_status', ''),
             'rooms_num': str(rooms_num),
             'free_rooms_amount': str(free_rooms_amount),
@@ -176,7 +179,7 @@ def generate_statistics(run_date=None):
         'max_capacity',
         'available_rooms_percent',
         'min_price'
-    ]
+    ] + CONTROL_FIELDS
     
     try:
         with open(output_csv, 'w', encoding='utf-8-sig', newline='') as csvfile:

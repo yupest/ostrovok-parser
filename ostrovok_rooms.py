@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 from datetime import date, timedelta, datetime
 from zoneinfo import ZoneInfo
 from capacity_utils import compute_max_capacity
+from future_availability import CONTROL_FIELDS, ASSUMED_FULL, FutureAvailabilityChecker
 from log_config import setup_logging, get_log_file_path, send_telegram_summary
 
 # Настройка stdout для корректного вывода Юникода
@@ -321,7 +322,7 @@ class OstrovokRoomsDailyParser:
 
     def _process_hotel(self, hotel_row, arrival_date, departure_date):
         """Обрабатывает один отель: извлекает ID, запрашивает данные"""
-        if hotel_row.get("collection_status") in ('assumed_full_missing_search', 'card_check_error'):
+        if hotel_row.get("collection_status") in ('assumed_full_missing_search', ASSUMED_FULL, 'no_future_offers', 'future_check_error', 'card_check_error'):
             # Missing search cards are classified upstream; do not invent room offers.
             return []
         hotel_url = hotel_row.get("show_rooms_url") or hotel_row.get("url") or hotel_row.get("detail_url")
@@ -335,10 +336,17 @@ class OstrovokRoomsDailyParser:
         logger.info("Запрашиваю %s (%s)", hotel_name, hotel_id)
         result = self._search_hotel(hotel_id, arrival_date, departure_date)
 
-        if not result:
-            logger.warning("Нет данных для %s", hotel_name)
+        if (not isinstance(result, dict) or 'rates' not in result
+                or (result['rates'] is not None and not isinstance(result['rates'], list))
+                or result.get('error') or result.get('err')
+                or result.get('ota_hotel_id') != hotel_id):
+            logger.warning("Нет подтверждённых данных для %s", hotel_name)
             return []
 
+        if not result.get('rates'):
+            evidence = FutureAvailabilityChecker()(hotel_row, arrival_date)
+            hotel_row.update(evidence)
+            hotel_row['collection_status'] = ASSUMED_FULL if evidence['future_availability_status'] == 'available' else ('no_future_offers' if evidence['future_availability_status'] == 'unavailable' else 'future_check_error')
         rooms_data = self._extract_room_data(result)
         return rooms_data
 
@@ -375,6 +383,14 @@ class OstrovokRoomsDailyParser:
                 rooms_count = sum(1 for r in rooms_data if r.get("rg_hash"))
                 logger.info("Сохранено %s номеров для %s", rooms_count, hotel_row.get('hotel_name') or hotel_row.get('name', 'unknown'))
         
+        # Persist control evidence for objects whose current rates were empty.
+        with csv_path.open(encoding='utf-8-sig', newline='') as stream:
+            columns = list(csv.DictReader(stream).fieldnames)
+        for key in ['collection_status'] + CONTROL_FIELDS:
+            if key not in columns: columns.append(key)
+        with csv_path.open('w', encoding='utf-8-sig', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=columns, extrasaction='ignore', lineterminator='\n')
+            writer.writeheader();writer.writerows(hotels)
         self._save_to_csv(all_rooms_data)
         if all_rooms_data:
             logger.info("Парсинг завершён. Всего обработано %s номеров.", len(all_rooms_data))

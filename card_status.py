@@ -2,13 +2,15 @@
 import logging
 import json
 from accommodation_types import is_apartment
+from datetime import date,timedelta
+from future_availability import CONTROL_FIELDS, ASSUMED_FULL, FutureAvailabilityChecker
 import re
 from html.parser import HTMLParser
 from urllib.parse import urlparse
 import requests
 
 logger = logging.getLogger(__name__)
-STATUS_FIELDS = ['card_status', 'card_checked_date', 'card_check_reason']
+STATUS_FIELDS = ['card_status', 'card_checked_date', 'card_check_reason'] + CONTROL_FIELDS
 DAILY_FIELDS = ['collection_status'] + STATUS_FIELDS
 
 
@@ -88,8 +90,9 @@ class CardChecker:
         return 'unknown', '; '.join(r[1] for r in results), ''
 
 
-def reconcile_catalog(existing, observed, checker, today):
-    """Append active missing cards as assumed full, never confuse errors with deletion."""
+def reconcile_catalog(existing, observed, checker, today, future_checker=None):
+    """Check missing cards and control nights; do not treat errors as deletion or occupancy."""
+    future_checker = future_checker or FutureAvailabilityChecker()
     daily = [dict(h, collection_status='search_found', card_status='active',
                   card_checked_date=today, card_check_reason='found_in_search') for h in observed if not is_apartment(h.get('kind'))]
     seen = {h['ota_hotel_id'] for h in observed}
@@ -111,6 +114,11 @@ def reconcile_catalog(existing, observed, checker, today):
         logger.info('Карточка %s: %s (%s)', hotel_id, status, reason)
         if status != 'inactive':
             row = dict(hotel)
-            row['collection_status'] = 'assumed_full_missing_search' if status == 'active' else 'card_check_error'
+            if status == 'active':
+                evidence = future_checker(hotel, date.fromisoformat(today) + timedelta(days=1))
+                hotel.update(evidence);row.update(evidence)
+                row['collection_status'] = ASSUMED_FULL if evidence['future_availability_status'] == 'available' else ('no_future_offers' if evidence['future_availability_status'] == 'unavailable' else 'future_check_error')
+            else:
+                row['collection_status'] = 'card_check_error'
             daily.append(row)
     return daily
