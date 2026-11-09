@@ -1,10 +1,10 @@
 """Control-night availability for the agreed occupancy heuristic."""
-import calendar,json,uuid
+import calendar,json,uuid,math
 from datetime import date,timedelta
 from urllib.parse import urlparse
 import requests
 
-CONTROL_FIELDS=['future_availability_status','availability_checked_date','control_dates','control_results']
+CONTROL_FIELDS=['future_availability_status','availability_checked_date','control_dates','control_results','control_min_price','control_price_arrival']
 ASSUMED_FULL='assumed_full_future_available'
 EXCLUDED_STATUSES={'no_future_offers','future_check_error','card_check_error'}
 
@@ -17,6 +17,19 @@ def control_nights(arrival):
         monday=day+timedelta(days=(-day.weekday())%7)
         result.append((monday,monday+timedelta(days=1)))
     return result
+
+
+def minimum_rate_price(rates):
+    values=[]
+    for rate in rates or []:
+        for payment in rate.get('payment_options',{}).get('payment_types',[]) or []:
+            for amount,currency in [('amount','currency_code'),('show_amount','show_currency_code')]:
+                if payment.get(currency) not in (None,'','RUB'):continue
+                try:
+                    value=float(payment.get(amount))
+                    if value>0 and math.isfinite(value):values.append(value)
+                except (TypeError,ValueError):pass
+    return min(values) if values else None
 
 
 class FutureAvailabilityChecker:
@@ -46,13 +59,18 @@ class FutureAvailabilityChecker:
                            and (identity==expected if expected else payload.get('ota_hotel_id')==slug))
                     if valid:
                         result.update(status='available' if payload['rates'] else 'unavailable',rates=len(payload['rates'] or []))
+                        if payload['rates']:
+                            result['min_price']=minimum_rate_price(payload['rates'])
                         break
                     result['status']='error'
                 except (requests.RequestException,ValueError,TypeError):result['status']='error'
             results.append(result)
             if result['status']=='available':
-                status='available';break
+                status='available'
         if status!='available' and any(r['status']=='error' for r in results):status='error'
-        return {'future_availability_status':status,'availability_checked_date':(arrival-timedelta(days=1)).isoformat(),
+        prices=[r for r in results if r.get('status')=='available' and r.get('min_price') is not None]
+        cheapest=min(prices,key=lambda r:r['min_price']) if prices else {}
+        return {'control_min_price':cheapest.get('min_price',''),'control_price_arrival':cheapest.get('arrival',''),
+                'future_availability_status':status,'availability_checked_date':(arrival-timedelta(days=1)).isoformat(),
                 'control_dates':json.dumps([a.isoformat() for a,b in nights]),
                 'control_results':json.dumps(results,ensure_ascii=False)}

@@ -140,7 +140,9 @@ def generate_statistics(run_date=None):
             free_rooms_amount = 0
             available_rooms_percent = 0.0
             max_capacity = 0
-            min_price = None
+            try:
+                min_price = float(hotel_info.get('control_min_price') or 0) or None
+            except (ValueError,TypeError):min_price = None
         elif collection_status in EXCLUDED_STATUSES or collection_status == 'assumed_full_missing_search' or ota_hotel_id not in rooms_stats:
             # A failed card/rates request is unknown, never evidence of full occupancy.
             free_rooms_amount = ''

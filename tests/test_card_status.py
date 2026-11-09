@@ -71,15 +71,16 @@ class CardTests(unittest.TestCase):
             root=Path(temp);day='2026-11-07'
             for folder in ['hotels','rooms']: (root/'daily'/folder).mkdir(parents=True)
             with (root/'daily/hotels'/f'{day}.csv').open('w') as f:
-                w=csv.DictWriter(f,fieldnames=['ota_hotel_id','name','rooms_number','collection_status','card_status']);w.writeheader()
+                w=csv.DictWriter(f,fieldnames=['ota_hotel_id','name','rooms_number','collection_status','card_status','control_min_price']);w.writeheader()
                 for key,status in [('full','assumed_full_future_available'),('error','card_check_error'),('request_failed','search_found'),('legacy','assumed_full_missing_search'),('seasonal','no_future_offers'),('control_failed','future_check_error')]:
-                    w.writerow(dict(ota_hotel_id=key,name=key,rooms_number=38,collection_status=status,card_status='active'))
+                    w.writerow(dict(ota_hotel_id=key,name=key,rooms_number=38,collection_status=status,card_status='active',control_min_price=3000 if key=='full' else ''))
             (root/'daily/rooms'/f'{day}.csv').write_text('ota_hotel_id,allotment,capacity,price_rub_min\n')
             with patch.object(ostrovok_statistic,'__file__',str(root/'ostrovok_statistic.py')):
                 ostrovok_statistic.generate_statistics(date(2026,11,7))
             with (root/'daily/statistics'/f'{day}.csv').open(encoding='utf-8-sig') as f: rows={r['ota_hotel_id']:r for r in csv.DictReader(f)}
             self.assertEqual(float(rows['full']['available_rooms_percent']),0)
             self.assertEqual(rows['full']['free_rooms_amount'],'0')
+            self.assertEqual(float(rows['full']['min_price']),3000)
             self.assertEqual(rows['error']['available_rooms_percent'],'')
             self.assertEqual(rows['request_failed']['available_rooms_percent'],'')
             self.assertEqual(rows['legacy']['available_rooms_percent'],'')
