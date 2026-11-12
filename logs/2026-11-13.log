@@ -1,0 +1,828 @@
+2026-11-12 16:40:51 [INFO] __main__: Режим CI: увеличенные таймауты и ожидание networkidle.
+2026-11-12 16:40:51 [INFO] __main__: Запуск парсера отелей...
+2026-11-12 16:40:51 [INFO] __main__: Даты бронирования: 14.11.2026 - 15.11.2026
+2026-11-12 16:40:54 [INFO] __main__: Страница 1, попытка 1/3
+2026-11-12 16:41:01 [INFO] __main__: Страница 1: новых 20, всего 20 / 314
+2026-11-12 16:41:01 [INFO] __main__: Страница 2, попытка 1/3
+2026-11-12 16:41:06 [INFO] __main__: Страница 2: новых 20, всего 40 / 314
+2026-11-12 16:41:06 [INFO] __main__: Страница 3, попытка 1/3
+2026-11-12 16:41:11 [INFO] __main__: Страница 3: новых 20, всего 60 / 314
+2026-11-12 16:41:11 [INFO] __main__: Страница 4, попытка 1/3
+2026-11-12 16:41:17 [INFO] __main__: Страница 4: новых 20, всего 80 / 314
+2026-11-12 16:41:17 [INFO] __main__: Страница 5, попытка 1/3
+2026-11-12 16:41:23 [INFO] __main__: Страница 5: новых 20, всего 100 / 314
+2026-11-12 16:41:23 [INFO] __main__: Страница 6, попытка 1/3
+2026-11-12 16:41:30 [INFO] __main__: Страница 6: новых 20, всего 120 / 314
+2026-11-12 16:41:30 [INFO] __main__: Страница 7, попытка 1/3
+2026-11-12 16:41:35 [INFO] __main__: Страница 7: новых 20, всего 140 / 314
+2026-11-12 16:41:35 [INFO] __main__: Страница 8, попытка 1/3
+2026-11-12 16:41:40 [INFO] __main__: Страница 8: новых 20, всего 160 / 314
+2026-11-12 16:41:40 [INFO] __main__: Страница 9, попытка 1/3
+2026-11-12 16:41:45 [INFO] __main__: Страница 9: новых 20, всего 180 / 314
+2026-11-12 16:41:45 [INFO] __main__: Страница 10, попытка 1/3
+2026-11-12 16:41:51 [INFO] __main__: Страница 10: новых 20, всего 200 / 314
+2026-11-12 16:41:51 [INFO] __main__: Страница 11, попытка 1/3
+2026-11-12 16:41:56 [INFO] __main__: Страница 11: новых 20, всего 220 / 314
+2026-11-12 16:41:56 [INFO] __main__: Страница 12, попытка 1/3
+2026-11-12 16:42:01 [INFO] __main__: Страница 12: новых 20, всего 240 / 314
+2026-11-12 16:42:01 [INFO] __main__: Страница 13, попытка 1/3
+2026-11-12 16:42:03 [INFO] __main__: Страница 13: новых 20, всего 260 / 314
+2026-11-12 16:42:03 [INFO] __main__: Страница 14, попытка 1/3
+2026-11-12 16:42:09 [INFO] __main__: Страница 14: новых 20, всего 280 / 314
+2026-11-12 16:42:09 [INFO] __main__: Страница 15, попытка 1/3
+2026-11-12 16:42:14 [INFO] __main__: Страница 15: новых 20, всего 300 / 314
+2026-11-12 16:42:14 [INFO] __main__: Страница 16, попытка 1/3
+2026-11-12 16:42:16 [INFO] __main__: Страница 16: новых 14, всего 314 / 314
+2026-11-12 16:42:16 [INFO] __main__: Поиск завершён: собрано 314 уникальных объектов, API сообщает 314
+2026-11-12 16:42:16 [INFO] __main__: Сохранено 314 отелей в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/hotels/2026-11-13.csv
+2026-11-12 16:42:16 [INFO] __main__: Парсинг завершён. Всего обработано 314 отелей.
+2026-11-12 16:42:17 [INFO] __main__: Каталог сохранён: 1447 отелей → /home/runner/work/ostrovok-parser/ostrovok-parser/catalog/hotels.csv
+2026-11-12 16:42:17 [INFO] __main__: Каталог обновлён: всего 1447, новых 0
+2026-11-12 16:42:18 [INFO] card_status: Карточка sobolinka_parkhotel_2: active (hotel_card_verified)
+2026-11-12 16:42:33 [INFO] card_status: Карточка olkhonstory_guest_house: active (hotel_card_verified)
+2026-11-12 16:42:34 [INFO] card_status: Карточка gostevoy_dom_sunrise: active (hotel_card_verified)
+2026-11-12 16:42:37 [INFO] card_status: Карточка gostinitsa_undina: active (hotel_card_verified)
+2026-11-12 16:42:40 [INFO] card_status: Карточка baykal_guest_house_3: active (hotel_card_verified)
+2026-11-12 16:42:42 [INFO] card_status: Карточка nochleg_i_zavtrak_bb_shambala: active (hotel_card_verified)
+2026-11-12 16:42:47 [INFO] card_status: Карточка legend_of_baikal: active (hotel_card_verified)
+2026-11-12 16:42:49 [INFO] card_status: Карточка baikal_view_hotel: active (hotel_card_verified)
+2026-11-12 16:43:02 [INFO] card_status: Карточка less_guest_house: active (hotel_card_verified)
+2026-11-12 16:43:04 [INFO] card_status: Карточка vesta_hotel_3: active (hotel_card_verified)
+2026-11-12 16:43:19 [INFO] card_status: Карточка bajkalkemp: active (hotel_card_verified)
+2026-11-12 16:43:22 [INFO] card_status: Карточка hotel_sozvezdie_baikala: active (hotel_card_verified)
+2026-11-12 16:43:25 [INFO] card_status: Карточка gostevoy_dom_briz_3: active (hotel_card_verified)
+2026-11-12 16:43:27 [INFO] card_status: Карточка gostevoj_dom_otdyih_na_bajkale: active (hotel_card_verified)
+2026-11-12 16:43:30 [INFO] card_status: Карточка gostinitsa_akademicheskaya: active (hotel_card_verified)
+2026-11-12 16:43:32 [INFO] card_status: Карточка recreation_complex_altan: active (hotel_card_verified)
+2026-11-12 16:43:43 [INFO] card_status: Карточка hotel_nataly_2: active (hotel_card_verified)
+2026-11-12 16:43:44 [INFO] card_status: Карточка meridian_7: active (hotel_card_verified)
+2026-11-12 16:43:55 [INFO] card_status: Карточка dauria_hotel_2: active (hotel_card_verified)
+2026-11-12 16:43:58 [INFO] card_status: Карточка smart_hotel_kdo_irkutsk_hotel: active (hotel_card_verified)
+2026-11-12 16:44:07 [INFO] card_status: Карточка gostevoy_dom_forest_home: active (hotel_card_verified)
+2026-11-12 16:44:08 [INFO] card_status: Карточка pekin_hotel: active (hotel_card_verified)
+2026-11-12 16:44:10 [INFO] card_status: Карточка the_hotel_on_volzhskaya: active (hotel_card_verified)
+2026-11-12 16:44:19 [INFO] card_status: Карточка yupiter: active (hotel_card_verified)
+2026-11-12 16:44:22 [INFO] card_status: Карточка hotel_shvedka: active (hotel_card_verified)
+2026-11-12 16:44:26 [INFO] card_status: Карточка hotel_dacha_baikaleco: active (hotel_card_verified)
+2026-11-12 16:44:31 [INFO] card_status: Карточка gostevoy_dom_melodiya_baykala: active (hotel_card_verified)
+2026-11-12 16:44:33 [INFO] card_status: Карточка hotel_shishki: active (hotel_card_verified)
+2026-11-12 16:44:34 [INFO] card_status: Карточка mir_baykala_hotel: active (hotel_card_verified)
+2026-11-12 16:44:44 [INFO] card_status: Карточка vitim: active (hotel_card_verified)
+2026-11-12 16:44:50 [INFO] card_status: Карточка home_hotel_apartments_home_wanted_on_piskunov_street: active (hotel_card_verified)
+2026-11-12 16:44:59 [INFO] card_status: Карточка gostevoy_dom_isiger_baikal: active (hotel_card_verified)
+2026-11-12 16:45:03 [INFO] card_status: Карточка glemping_hygge_barn: active (hotel_card_verified)
+2026-11-12 16:45:05 [INFO] card_status: Карточка loft_house_38_guest_house: active (hotel_card_verified)
+2026-11-12 16:45:09 [INFO] card_status: Карточка klubnyij_kvartal_apartments: active (hotel_card_verified)
+2026-11-12 16:45:11 [INFO] card_status: Карточка north_star_hotel_9: active (hotel_card_verified)
+2026-11-12 16:45:13 [INFO] card_status: Карточка marx_hotel: active (hotel_card_verified)
+2026-11-12 16:45:22 [INFO] card_status: Карточка hotel_flagman_olkhona: active (hotel_card_verified)
+2026-11-12 16:45:34 [INFO] card_status: Карточка sportkompleks_ozerny_tulun_hotel: active (hotel_card_verified)
+2026-11-12 16:45:41 [INFO] card_status: Карточка nebo_baykala_guest_house: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-12 16:45:43 [INFO] card_status: Карточка solnechny_guest_house_7: active (hotel_card_verified)
+2026-11-12 16:45:45 [INFO] card_status: Карточка u_istoka_hotel: active (hotel_card_verified)
+2026-11-12 16:45:49 [INFO] card_status: Карточка divobaykala_flat_1: active (hotel_card_verified)
+2026-11-12 16:45:52 [INFO] card_status: Карточка azatai_park_hotel: active (hotel_card_verified)
+2026-11-12 16:45:53 [INFO] card_status: Карточка apartments_viking_khaus: active (hotel_card_verified)
+2026-11-12 16:45:56 [INFO] card_status: Карточка hotel_star_of_baiakal: active (hotel_card_verified)
+2026-11-12 16:46:00 [INFO] card_status: Карточка spektr_2: active (hotel_card_verified)
+2026-11-12 16:46:08 [INFO] card_status: Карточка the_sky_of_lake_baikal: active (hotel_card_verified)
+2026-11-12 16:46:25 [INFO] card_status: Карточка geser_recreation_center: active (hotel_card_verified)
+2026-11-12 16:46:30 [INFO] card_status: Карточка baza_otdykha_gostiny_dvor_vdokhnovenie: active (hotel_card_verified)
+2026-11-12 16:46:32 [INFO] card_status: Карточка olkhon_inn: active (hotel_card_verified)
+2026-11-12 16:46:34 [INFO] card_status: Карточка recreation_centre_baikal_rainbow: active (hotel_card_verified)
+2026-11-12 16:46:39 [INFO] card_status: Карточка tsentr_otdykha_dashi: active (hotel_card_verified)
+2026-11-12 16:46:40 [INFO] card_status: Карточка baza_otdykha_olkhon: active (hotel_card_verified)
+2026-11-12 16:46:42 [INFO] card_status: Карточка olkhon_2: active (hotel_card_verified)
+2026-11-12 16:46:47 [INFO] card_status: Карточка gostevoy_dom_holiday_park_on_olkhon: active (hotel_card_verified)
+2026-11-12 16:46:49 [INFO] card_status: Карточка hotel_u_ruchyya: active (hotel_card_verified)
+2026-11-12 16:46:51 [INFO] card_status: Карточка hotel_complex_baikalov_ostrog: active (hotel_card_verified)
+2026-11-12 16:46:52 [INFO] card_status: Карточка guesthouse_dudeevukh: active (hotel_card_verified)
+2026-11-12 16:46:54 [INFO] card_status: Карточка rumyantseva_6_apartments: active (hotel_card_verified)
+2026-11-12 16:46:55 [INFO] card_status: Карточка inn_oasis_2: active (hotel_card_verified)
+2026-11-12 16:46:57 [INFO] card_status: Карточка baikalbabr: active (hotel_card_verified)
+2026-11-12 16:46:58 [INFO] card_status: Карточка v_gostyakh_u_dubrovskikh_guest_house: active (hotel_card_verified)
+2026-11-12 16:47:00 [INFO] card_status: Карточка hotel_baikal_krai: active (hotel_card_verified)
+2026-11-12 16:47:11 [INFO] card_status: Карточка guest_house_siberia_2: active (hotel_card_verified)
+2026-11-12 16:47:13 [INFO] card_status: Карточка tochka_baykala_hotel: active (hotel_card_verified)
+2026-11-12 16:47:14 [INFO] card_status: Карточка bolshoe_puteshestvie_hotel: active (hotel_card_verified)
+2026-11-12 16:47:16 [INFO] card_status: Карточка guest_house_baykal: active (hotel_card_verified)
+2026-11-12 16:47:18 [INFO] card_status: Карточка hotel_sayany: active (hotel_card_verified)
+2026-11-12 16:47:19 [INFO] card_status: Карточка gostevoj_dom_endemik: active (hotel_card_verified)
+2026-11-12 16:47:32 [INFO] card_status: Карточка lakeplacebaykal_living_quarters: active (hotel_card_verified)
+2026-11-12 16:47:34 [INFO] card_status: Карточка lakeplace_baikal_guest_house: active (hotel_card_verified)
+2026-11-12 16:47:35 [INFO] card_status: Карточка miniotel_gostinitsa_nerpenok: active (hotel_card_verified)
+2026-11-12 16:47:37 [INFO] card_status: Карточка guest_house_na_obrucheva: active (hotel_card_verified)
+2026-11-12 16:47:40 [INFO] card_status: Карточка hotel_irbis: active (hotel_card_verified)
+2026-11-12 16:47:48 [INFO] card_status: Карточка aura_baykala_guest_house: active (hotel_card_verified)
+2026-11-12 16:47:50 [INFO] card_status: Карточка hotel_olkhonhill: active (hotel_card_verified)
+2026-11-12 16:47:52 [INFO] card_status: Карточка gostevoy_dom_teremok_3: active (hotel_card_verified)
+2026-11-12 16:47:53 [INFO] card_status: Карточка odisseya: active (hotel_card_verified)
+2026-11-12 16:48:07 [INFO] card_status: Карточка khan_glamping_goloustnoe_khan_glamping_goloustnoe: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-12 16:48:08 [INFO] card_status: Карточка kakdoma_on_krasnokazachya_street: active (hotel_card_verified)
+2026-11-12 16:48:15 [INFO] card_status: Карточка baikalov_ostrog: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-12 16:48:15 [INFO] card_status: Карточка irkutsk: active (hotel_card_verified)
+2026-11-12 16:48:24 [INFO] card_status: Карточка hotel_ochagof: active (hotel_card_verified)
+2026-11-12 16:48:26 [INFO] card_status: Карточка fregat_hotel_3: active (hotel_card_verified)
+2026-11-12 16:48:27 [INFO] card_status: Карточка apartamenty_sibirskie_puteshestviya_na_ul_lebedevakumacha_d_29: active (hotel_card_verified)
+2026-11-12 16:48:29 [INFO] card_status: Карточка trekhkomnatnaya_kvartira_okolo_festivalya_lodging_house: active (hotel_card_verified)
+2026-11-12 16:48:31 [INFO] card_status: Карточка berezka_aparthotel_2: active (hotel_card_verified)
+2026-11-12 16:48:45 [INFO] card_status: Карточка 777_hotel: active (hotel_card_verified)
+2026-11-12 16:48:55 [INFO] card_status: Карточка 130hotel_minihotel: active (hotel_card_verified)
+2026-11-12 16:48:57 [INFO] card_status: Карточка mini_hotel_usadyba1901: active (hotel_card_verified)
+2026-11-12 16:49:10 [INFO] card_status: Карточка hostel_bravo_: active (hotel_card_verified)
+2026-11-12 16:49:12 [INFO] card_status: Карточка prospekt_mini_hotel: active (hotel_card_verified)
+2026-11-12 16:49:23 [INFO] card_status: Карточка gk_malyij_hotel: active (hotel_card_verified)
+2026-11-12 16:49:32 [INFO] card_status: Карточка dobryi_kot: active (hotel_card_verified)
+2026-11-12 16:49:39 [INFO] card_status: Карточка arshan_mini_hotel: active (hotel_card_verified)
+2026-11-12 16:49:41 [INFO] card_status: Карточка miniotel_gostiny_dvorik: active (hotel_card_verified)
+2026-11-12 16:49:43 [INFO] card_status: Карточка magistral_6: active (hotel_card_verified)
+2026-11-12 16:49:46 [INFO] card_status: Карточка miniotel_khoromy: active (hotel_card_verified)
+2026-11-12 16:49:48 [INFO] card_status: Карточка chastny_dom_baykalskiy_dvorik_na_angarskoy_17v: active (hotel_card_verified)
+2026-11-12 16:49:54 [INFO] card_status: Карточка baza_otdykha_rosa: active (hotel_card_verified)
+2026-11-12 16:50:04 [INFO] card_status: Карточка guest_house_russky_dom_: active (hotel_card_verified)
+2026-11-12 16:50:06 [INFO] card_status: Карточка chilla_villa_black_guest_house: active (hotel_card_verified)
+2026-11-12 16:50:17 [INFO] card_status: Карточка guest_house_yolov_park: active (hotel_card_verified)
+2026-11-12 16:50:20 [INFO] card_status: Карточка chilla_villa_grand_villa_1: active (hotel_card_verified)
+2026-11-12 16:50:22 [INFO] card_status: Карточка chilla_villa_grand_guest_house: active (hotel_card_verified)
+2026-11-12 16:50:33 [INFO] card_status: Карточка rasko_design_home_on_piskunov_street: active (hotel_card_verified)
+2026-11-12 16:50:37 [INFO] card_status: Карточка chastny_dom_baykalskiy_dvorik_na_angarskoy_3a: active (hotel_card_verified)
+2026-11-12 16:50:46 [INFO] card_status: Карточка guest_house_u_baykala: active (hotel_card_verified)
+2026-11-12 16:50:49 [INFO] card_status: Карточка liuks: active (hotel_card_verified)
+2026-11-12 16:50:51 [INFO] card_status: Карточка volkova_minihotel: active (hotel_card_verified)
+2026-11-12 16:50:59 [INFO] card_status: Карточка fortuna_50: active (hotel_card_verified)
+2026-11-12 16:51:01 [INFO] card_status: Карточка chastny_dom_aframe_na_malinovoy: active (hotel_card_verified)
+2026-11-12 16:51:03 [INFO] card_status: Карточка chastny_dom_khaytek_na_malinovoy_4: active (hotel_card_verified)
+2026-11-12 16:51:05 [INFO] card_status: Карточка mangutai_guest_house: active (hotel_card_verified)
+2026-11-12 16:51:15 [INFO] card_status: Карточка rasko_design_home_rasko_design_home_on_deputatskaya_street: active (hotel_card_verified)
+2026-11-12 16:51:24 [INFO] card_status: Карточка dlya_vecherinok_private_house: active (hotel_card_verified)
+2026-11-12 16:51:27 [INFO] card_status: Карточка dom_3_s_panoramnym_vidom_na_ozero_private_house: active (hotel_card_verified)
+2026-11-12 16:51:28 [INFO] card_status: Карточка dom_2_s_panoramnym_vidom_na_ozero_private_house: active (hotel_card_verified)
+2026-11-12 16:51:30 [INFO] card_status: Карточка recreation_camp_baykalskiy_kray: active (hotel_card_verified)
+2026-11-12 16:51:32 [INFO] card_status: Карточка dom_na_centralnoj_19: active (hotel_card_verified)
+2026-11-12 16:51:37 [INFO] card_status: Карточка hotel_pavlin: active (hotel_card_verified)
+2026-11-12 16:51:39 [INFO] card_status: Карточка private_party_house: active (hotel_card_verified)
+2026-11-12 16:51:49 [INFO] card_status: Карточка glemping_khan_glamping_goloustnoye: active (hotel_card_verified)
+2026-11-12 16:51:56 [INFO] card_status: Карточка mini_hotel_gostiny_dvor_2: active (hotel_card_verified)
+2026-11-12 16:52:00 [INFO] card_status: Карточка dacha_baushevo_recreation_center: active (hotel_card_verified)
+2026-11-12 16:52:02 [INFO] card_status: Карточка dacha_baushevo: active (hotel_card_verified)
+2026-11-12 16:52:15 [INFO] card_status: Карточка mini_hotel_5_morey: active (hotel_card_verified)
+2026-11-12 16:52:24 [INFO] card_status: Карточка usadba_50_minihotel: active (hotel_card_verified)
+2026-11-12 16:52:38 [INFO] card_status: Карточка na_bajkale_na_gopnoj_private_house: active (hotel_card_verified)
+2026-11-12 16:52:41 [INFO] card_status: Карточка zemlya_private_house_2: active (hotel_card_verified)
+2026-11-12 16:52:42 [INFO] card_status: Карточка na_gornoy: active (hotel_card_verified)
+2026-11-12 16:52:46 [INFO] __main__: Каталог сохранён: 1447 отелей → /home/runner/work/ostrovok-parser/ostrovok-parser/catalog/hotels.csv
+2026-11-12 16:52:46 [INFO] __main__: Сохранено 446 отелей в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/hotels/2026-11-13.csv
+2026-11-12 16:52:46 [INFO] __main__: Дневной список после проверки каталога: 446 объектов
+2026-11-12 16:52:47 [INFO] __main__: Даты бронирования: 14.11.2026 - 15.11.2026
+2026-11-12 16:52:47 [INFO] __main__: Запуск браузера для получения куки...
+2026-11-12 16:52:52 [INFO] __main__: Получено 54 куки
+2026-11-12 16:52:52 [INFO] __main__: Запрашиваю irkutsk_city_center (irkutsk_city_center)
+2026-11-12 16:52:53 [INFO] __main__: Сохранено 7 номеров для Отель Иркутск Сити Центр
+2026-11-12 16:52:53 [INFO] __main__: Запрашиваю burduguz_hotel_2 (burduguz_hotel_2)
+2026-11-12 16:52:55 [INFO] __main__: Сохранено 0 номеров для Парк-Отель Бурдугуз
+2026-11-12 16:52:55 [INFO] __main__: Запрашиваю ibis_irkutsk_center (ibis_irkutsk_center)
+2026-11-12 16:52:55 [INFO] __main__: Сохранено 5 номеров для Отель Ибис Иркутск Центр
+2026-11-12 16:52:55 [INFO] __main__: Запрашиваю bajkal_hotel (bajkal_hotel)
+2026-11-12 16:52:56 [INFO] __main__: Сохранено 5 номеров для Отель Байкал
+2026-11-12 16:52:56 [INFO] __main__: Запрашиваю hotel_nuur_hotel (hotel_nuur_hotel)
+2026-11-12 16:52:57 [INFO] __main__: Сохранено 8 номеров для Отель Nuur Hotel
+2026-11-12 16:52:57 [INFO] __main__: Запрашиваю vozdushnaya_gavan (vozdushnaya_gavan)
+2026-11-12 16:52:58 [INFO] __main__: Сохранено 1 номеров для Отель Воздушная Гавань
+2026-11-12 16:52:58 [INFO] __main__: Запрашиваю evropa_hotel (evropa_hotel)
+2026-11-12 16:52:58 [INFO] __main__: Сохранено 13 номеров для Отель Европа
+2026-11-12 16:52:58 [INFO] __main__: Запрашиваю victory_hotel_4 (victory_hotel_4)
+2026-11-12 16:52:59 [INFO] __main__: Сохранено 3 номеров для Гостиница Виктория
+2026-11-12 16:52:59 [INFO] __main__: Запрашиваю tajga_hotel (tajga_hotel)
+2026-11-12 16:52:59 [INFO] __main__: Сохранено 8 номеров для Отель Тайга
+2026-11-12 16:52:59 [INFO] __main__: Запрашиваю azimut_aeroport_irkutsk_hotel (azimut_aeroport_irkutsk_hotel)
+2026-11-12 16:53:00 [INFO] __main__: Сохранено 6 номеров для AZIMUT Отель Аэропорт Иркутск 4*
+2026-11-12 16:53:00 [INFO] __main__: Запрашиваю apartotel_arbat (apartotel_arbat)
+2026-11-12 16:53:01 [INFO] __main__: Сохранено 4 номеров для Апарт-отель Арбат
+2026-11-12 16:53:01 [INFO] __main__: Запрашиваю archi_apt_apartments (archi_apt_apartments)
+2026-11-12 16:53:02 [INFO] __main__: Сохранено 2 номеров для Отель Baikal Archi Apt
+2026-11-12 16:53:02 [INFO] __main__: Запрашиваю podlemorie_hotel (podlemorie_hotel)
+2026-11-12 16:53:04 [INFO] __main__: Сохранено 3 номеров для Отель Подлеморье
+2026-11-12 16:53:04 [INFO] __main__: Запрашиваю hotel_anastasiya_2 (hotel_anastasiya_2)
+2026-11-12 16:53:04 [INFO] __main__: Сохранено 11 номеров для Отель ГК Анастасия
+2026-11-12 16:53:04 [INFO] __main__: Запрашиваю hotel_pushkin_2 (hotel_pushkin_2)
+2026-11-12 16:53:07 [INFO] __main__: Сохранено 6 номеров для Отель ПушкинЪ
+2026-11-12 16:53:07 [INFO] __main__: Запрашиваю mini_hotel_baikal (mini_hotel_baikal)
+2026-11-12 16:53:08 [INFO] __main__: Сохранено 2 номеров для Отель Байкал терра
+2026-11-12 16:53:08 [INFO] __main__: Запрашиваю dolina_mechtateley_glemping (dolina_mechtateley_glemping)
+2026-11-12 16:53:09 [INFO] __main__: Сохранено 0 номеров для База отдыха Долина Мечтателей
+2026-11-12 16:53:09 [INFO] __main__: Запрашиваю hotel_premium_hotel_pushkin (hotel_premium_hotel_pushkin)
+2026-11-12 16:53:10 [INFO] __main__: Сохранено 5 номеров для Премиум-отель Пушкин
+2026-11-12 16:53:10 [INFO] __main__: Запрашиваю kosmos_recreation_camp (kosmos_recreation_camp)
+2026-11-12 16:53:10 [INFO] __main__: Сохранено 2 номеров для База отдыха Космос
+2026-11-12 16:53:10 [INFO] __main__: Запрашиваю lyuks_hotel_4 (lyuks_hotel_4)
+2026-11-12 16:53:13 [INFO] __main__: Сохранено 3 номеров для Отель Люкс
+2026-11-12 16:53:13 [INFO] __main__: Запрашиваю olkhon_history_guest_house (olkhon_history_guest_house)
+2026-11-12 16:53:16 [INFO] __main__: Сохранено 1 номеров для Гостевой дом Древо Ольхона
+2026-11-12 16:53:16 [INFO] __main__: Запрашиваю lazurny_bereg_hotel_ (lazurny_bereg_hotel_)
+2026-11-12 16:53:19 [INFO] __main__: Сохранено 4 номеров для Гостиница Лазурный берег
+2026-11-12 16:53:19 [INFO] __main__: Запрашиваю otel_irkut (otel_irkut)
+2026-11-12 16:53:20 [INFO] __main__: Сохранено 7 номеров для Отель Иркут
+2026-11-12 16:53:20 [INFO] __main__: Запрашиваю dohodnyij_dom_listratvoj_butikhotel (dohodnyij_dom_listratvoj_butikhotel)
+2026-11-12 16:53:21 [INFO] __main__: Сохранено 7 номеров для Отель Доходный дом Листратовой
+2026-11-12 16:53:21 [INFO] __main__: Запрашиваю taiga_2 (taiga_2)
+2026-11-12 16:53:22 [INFO] __main__: Сохранено 3 номеров для Отель Тайга
+2026-11-12 16:53:22 [INFO] __main__: Запрашиваю empire_hotel_3 (empire_hotel_3)
+2026-11-12 16:53:22 [INFO] __main__: Сохранено 11 номеров для Гостиница Империя
+2026-11-12 16:53:22 [INFO] __main__: Запрашиваю geografiya_hotel (geografiya_hotel)
+2026-11-12 16:53:24 [INFO] __main__: Сохранено 1 номеров для Бутик-отель География
+2026-11-12 16:53:24 [INFO] __main__: Запрашиваю history_boutiquehotel (history_boutiquehotel)
+2026-11-12 16:53:27 [INFO] __main__: Сохранено 8 номеров для Отель HISTORY Бутик-отель и СПА
+2026-11-12 16:53:27 [INFO] __main__: Запрашиваю hotel_khotej (hotel_khotej)
+2026-11-12 16:53:28 [INFO] __main__: Сохранено 2 номеров для Отель Хотэй
+2026-11-12 16:53:28 [INFO] __main__: Запрашиваю inn_business_hall (inn_business_hall)
+2026-11-12 16:53:31 [INFO] __main__: Сохранено 2 номеров для Отель Business Hall
+2026-11-12 16:53:31 [INFO] __main__: Запрашиваю otel_tsentral (otel_tsentral)
+2026-11-12 16:53:31 [INFO] __main__: Сохранено 7 номеров для Отель Централь
+2026-11-12 16:53:31 [INFO] __main__: Запрашиваю malinovka_3 (malinovka_3)
+2026-11-12 16:53:33 [INFO] __main__: Сохранено 0 номеров для Малиновка
+2026-11-12 16:53:33 [INFO] __main__: Запрашиваю baikal_business_center_hotel (baikal_business_center_hotel)
+2026-11-12 16:53:34 [INFO] __main__: Сохранено 6 номеров для Отель Байкал Бизнес Центр
+2026-11-12 16:53:34 [INFO] __main__: Запрашиваю beliy_sobol_parkhotel (beliy_sobol_parkhotel)
+2026-11-12 16:53:34 [INFO] __main__: Сохранено 4 номеров для Парк-отель Белый Соболь
+2026-11-12 16:53:34 [INFO] __main__: Запрашиваю butikhotel_marusya (butikhotel_marusya)
+2026-11-12 16:53:35 [INFO] __main__: Сохранено 5 номеров для Бутик-отель Маруся
+2026-11-12 16:53:35 [INFO] __main__: Запрашиваю na_ulitse_pavlova_28_apartments (na_ulitse_pavlova_28_apartments)
+2026-11-12 16:53:36 [INFO] __main__: Сохранено 1 номеров для На улице Павлова 28
+2026-11-12 16:53:36 [INFO] __main__: Запрашиваю apartamentyi_v_irkutske (apartamentyi_v_irkutske)
+2026-11-12 16:53:36 [INFO] __main__: Сохранено 2 номеров для Меблированные комнаты в Иркутске
+2026-11-12 16:53:36 [INFO] __main__: Запрашиваю uda_2 (uda_2)
+2026-11-12 16:53:38 [INFO] __main__: Сохранено 4 номеров для Отель УДА
+2026-11-12 16:53:38 [INFO] __main__: Запрашиваю yakovlev_hotel (yakovlev_hotel)
+2026-11-12 16:53:40 [INFO] __main__: Сохранено 4 номеров для Отель Яковлевъ
+2026-11-12 16:53:40 [INFO] __main__: Запрашиваю hotel_angara (hotel_angara)
+2026-11-12 16:53:42 [INFO] __main__: Сохранено 8 номеров для Отель Ангара-Приоритет
+2026-11-12 16:53:42 [INFO] __main__: Запрашиваю vera_baikal (vera_baikal)
+2026-11-12 16:53:44 [INFO] __main__: Сохранено 0 номеров для Отель Вера Байкал
+2026-11-12 16:53:44 [INFO] __main__: Запрашиваю atlas_hotel_3 (atlas_hotel_3)
+2026-11-12 16:53:44 [INFO] __main__: Сохранено 4 номеров для Гостиница Атлас
+2026-11-12 16:53:44 [INFO] __main__: Запрашиваю eldorado_guest_house (eldorado_guest_house)
+2026-11-12 16:53:45 [INFO] __main__: Сохранено 3 номеров для Гостевой дом Эльдорадо
+2026-11-12 16:53:45 [INFO] __main__: Запрашиваю hotel_harats_inn (hotel_harats_inn)
+2026-11-12 16:53:49 [INFO] __main__: Сохранено 4 номеров для Отель Harat's inn
+2026-11-12 16:53:49 [INFO] __main__: Запрашиваю baykal_khan_listvyanka (baykal_khan_listvyanka)
+2026-11-12 16:53:50 [INFO] __main__: Сохранено 0 номеров для Отель Байкал Хан п.Листвянка
+2026-11-12 16:53:50 [INFO] __main__: Запрашиваю baykal_shale_guest_house (baykal_shale_guest_house)
+2026-11-12 16:53:54 [INFO] __main__: Сохранено 4 номеров для Байкал Шале
+2026-11-12 16:53:54 [INFO] __main__: Запрашиваю armat_hotel (armat_hotel)
+2026-11-12 16:53:56 [INFO] __main__: Сохранено 9 номеров для Отель Армат
+2026-11-12 16:53:56 [INFO] __main__: Запрашиваю angara_hotel (angara_hotel)
+2026-11-12 16:53:56 [INFO] __main__: Сохранено 7 номеров для Ангара Отель
+2026-11-12 16:53:56 [INFO] __main__: Запрашиваю riderside (riderside)
+2026-11-12 16:53:58 [INFO] __main__: Сохранено 2 номеров для Гостиница Riverside
+2026-11-12 16:53:58 [INFO] __main__: Запрашиваю guest_house_baykaliya (guest_house_baykaliya)
+2026-11-12 16:53:59 [INFO] __main__: Сохранено 2 номеров для Байкалия
+2026-11-12 16:53:59 [INFO] __main__: Запрашиваю chersky_hostel (chersky_hostel)
+2026-11-12 16:53:59 [INFO] __main__: Сохранено 2 номеров для Хостел Chersky
+2026-11-12 16:53:59 [INFO] __main__: Запрашиваю hotel_aziyayevropa (hotel_aziyayevropa)
+2026-11-12 16:54:02 [INFO] __main__: Сохранено 4 номеров для Отель Азия-Европа
+2026-11-12 16:54:02 [INFO] __main__: Запрашиваю grand_baikal (grand_baikal)
+2026-11-12 16:54:04 [INFO] __main__: Сохранено 0 номеров для Отель Гранд Байкал
+2026-11-12 16:54:04 [INFO] __main__: Запрашиваю gostinitsa_ustilim (gostinitsa_ustilim)
+2026-11-12 16:54:06 [INFO] __main__: Сохранено 8 номеров для Усть-Илим
+2026-11-12 16:54:06 [INFO] __main__: Запрашиваю mayak_hotel_listvyanka (mayak_hotel_listvyanka)
+2026-11-12 16:54:09 [INFO] __main__: Сохранено 3 номеров для Отель Маяк
+2026-11-12 16:54:09 [INFO] __main__: Запрашиваю sokolov_hotel (sokolov_hotel)
+2026-11-12 16:54:11 [INFO] __main__: Сохранено 8 номеров для Апарт-отель Соколов
+2026-11-12 16:54:11 [INFO] __main__: Запрашиваю yolochka (yolochka)
+2026-11-12 16:54:15 [INFO] __main__: Сохранено 8 номеров для Меблированные комнаты Ёлочка
+2026-11-12 16:54:15 [INFO] __main__: Запрашиваю rus_hotel_irkutsk (rus_hotel_irkutsk)
+2026-11-12 16:54:16 [INFO] __main__: Сохранено 6 номеров для Гостиничный Комплекс Русь
+2026-11-12 16:54:16 [INFO] __main__: Запрашиваю miniotel_good_hotel (miniotel_good_hotel)
+2026-11-12 16:54:19 [INFO] __main__: Сохранено 2 номеров для Мини-Отель Good Hotel
+2026-11-12 16:54:19 [INFO] __main__: Запрашиваю silk_road_boutique_hotel (silk_road_boutique_hotel)
+2026-11-12 16:54:20 [INFO] __main__: Сохранено 3 номеров для Бутик-отель Silk Road- Шелковый Путь
+2026-11-12 16:54:20 [INFO] __main__: Запрашиваю best_eastern_hotel_zvezda (best_eastern_hotel_zvezda)
+2026-11-12 16:54:22 [INFO] __main__: Сохранено 5 номеров для Отель Звезда
+2026-11-12 16:54:22 [INFO] __main__: Запрашиваю hotel_soyuz_2 (hotel_soyuz_2)
+2026-11-12 16:54:22 [INFO] __main__: Сохранено 8 номеров для Жилое помещение Союз
+2026-11-12 16:54:22 [INFO] __main__: Запрашиваю aristokrat_hotel (aristokrat_hotel)
+2026-11-12 16:54:25 [INFO] __main__: Сохранено 5 номеров для Отель Аристократ
+2026-11-12 16:54:25 [INFO] __main__: Запрашиваю recreation_camp_bereg_nadezhdy (recreation_camp_bereg_nadezhdy)
+2026-11-12 16:54:28 [INFO] __main__: Сохранено 2 номеров для База отдыха Берег Надежды
+2026-11-12 16:54:28 [INFO] __main__: Запрашиваю guest_house_u_loly (guest_house_u_loly)
+2026-11-12 16:54:29 [INFO] __main__: Сохранено 0 номеров для Гостевой дом У лолы
+2026-11-12 16:54:29 [INFO] __main__: Запрашиваю city_park_hotel_13 (city_park_hotel_13)
+2026-11-12 16:54:30 [INFO] __main__: Сохранено 2 номеров для Меблированные комнаты City Park
+2026-11-12 16:54:30 [INFO] __main__: Запрашиваю baikal_forest_hotel (baikal_forest_hotel)
+2026-11-12 16:54:32 [INFO] __main__: Сохранено 12 номеров для Отель Форест
+2026-11-12 16:54:32 [INFO] __main__: Запрашиваю baikal_hostel (baikal_hostel)
+2026-11-12 16:54:35 [INFO] __main__: Сохранено 3 номеров для Хостел Точка Байкала
+2026-11-12 16:54:35 [INFO] __main__: Запрашиваю 7_dorog (7_dorog)
+2026-11-12 16:54:35 [INFO] __main__: Сохранено 8 номеров для Гостиница 7 дорог
+2026-11-12 16:54:35 [INFO] __main__: Запрашиваю montana_hostel (montana_hostel)
+2026-11-12 16:54:36 [INFO] __main__: Сохранено 0 номеров для Меблированные комнаты Montana
+2026-11-12 16:54:36 [INFO] __main__: Запрашиваю usadba_demidova_ (usadba_demidova_)
+2026-11-12 16:54:37 [INFO] __main__: Сохранено 5 номеров для Гостевой Дом Усадьба Демидова
+2026-11-12 16:54:37 [INFO] __main__: Запрашиваю minihotel_albatros (minihotel_albatros)
+2026-11-12 16:54:40 [INFO] __main__: Сохранено 4 номеров для Гостиница Альбатрос
+2026-11-12 16:54:40 [INFO] __main__: Запрашиваю rolling_stones_hostel_2 (rolling_stones_hostel_2)
+2026-11-12 16:54:41 [INFO] __main__: Сохранено 0 номеров для Хостел Rolling Stones
+2026-11-12 16:54:41 [INFO] __main__: Запрашиваю kupechesky_dvor_hotel (kupechesky_dvor_hotel)
+2026-11-12 16:54:42 [INFO] __main__: Сохранено 6 номеров для Отель Купеческий Дворъ
+2026-11-12 16:54:42 [INFO] __main__: Запрашиваю gostinitsa_solntse (gostinitsa_solntse)
+2026-11-12 16:54:43 [INFO] __main__: Сохранено 3 номеров для Гостиница Солнце
+2026-11-12 16:54:43 [INFO] __main__: Запрашиваю mihail_strogov (mihail_strogov)
+2026-11-12 16:54:46 [INFO] __main__: Сохранено 5 номеров для Отель Михаил Строгов
+2026-11-12 16:54:46 [INFO] __main__: Запрашиваю usadyba_yegorova_boutique_hotel (usadyba_yegorova_boutique_hotel)
+2026-11-12 16:54:47 [INFO] __main__: Сохранено 7 номеров для Бутик-отель Усадьба Егорова
+2026-11-12 16:54:47 [INFO] __main__: Запрашиваю international_hotel_sayen (international_hotel_sayen)
+2026-11-12 16:54:47 [INFO] __main__: Сохранено 7 номеров для SAYEN
+2026-11-12 16:54:47 [INFO] __main__: Запрашиваю gostevoy_dom_irkutskiy_kedr (gostevoy_dom_irkutskiy_kedr)
+2026-11-12 16:54:50 [INFO] __main__: Сохранено 4 номеров для Хостел Иркутский Кедр
+2026-11-12 16:54:50 [INFO] __main__: Запрашиваю delight_guest_house_2 (delight_guest_house_2)
+2026-11-12 16:54:52 [INFO] __main__: Сохранено 3 номеров для Гостевой Дом Байкал Дилайт
+2026-11-12 16:54:52 [INFO] __main__: Запрашиваю z_hostel_2 (z_hostel_2)
+2026-11-12 16:54:56 [INFO] __main__: Сохранено 0 номеров для Хостел Z
+2026-11-12 16:54:56 [INFO] __main__: Запрашиваю shelest (shelest)
+2026-11-12 16:54:58 [INFO] __main__: Сохранено 2 номеров для Shelest
+2026-11-12 16:54:58 [INFO] __main__: Запрашиваю glemping_iskateli (glemping_iskateli)
+2026-11-12 16:55:09 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Барнхаус
+2026-11-12 16:55:09 [INFO] __main__: Запрашиваю magas (magas)
+2026-11-12 16:55:11 [INFO] __main__: Сохранено 5 номеров для Отель на Перроне
+2026-11-12 16:55:11 [INFO] __main__: Запрашиваю camping_elis (camping_elis)
+2026-11-12 16:55:14 [INFO] __main__: Сохранено 6 номеров для Гостевой Дом Элис
+2026-11-12 16:55:14 [INFO] __main__: Запрашиваю irkutsk_hostel_2 (irkutsk_hostel_2)
+2026-11-12 16:55:15 [INFO] __main__: Сохранено 3 номеров для Хостел Иркутск
+2026-11-12 16:55:15 [INFO] __main__: Запрашиваю flagman_hotel (flagman_hotel)
+2026-11-12 16:55:15 [INFO] __main__: Сохранено 1 номеров для Отель Флагман
+2026-11-12 16:55:15 [INFO] __main__: Запрашиваю guest_house_yerofey (guest_house_yerofey)
+2026-11-12 16:55:16 [INFO] __main__: Сохранено 4 номеров для Гостевой дом Ерофей
+2026-11-12 16:55:16 [INFO] __main__: Запрашиваю baykal_khan_hotel_olkhon (baykal_khan_hotel_olkhon)
+2026-11-12 16:55:20 [INFO] __main__: Сохранено 4 номеров для Отель Байкал-Хан Ольхон
+2026-11-12 16:55:20 [INFO] __main__: Запрашиваю guest_house_baikal_yeti (guest_house_baikal_yeti)
+2026-11-12 16:55:24 [INFO] __main__: Сохранено 3 номеров для Гостевой дом Байкал Йети
+2026-11-12 16:55:24 [INFO] __main__: Запрашиваю legendy_baykala (legendy_baykala)
+2026-11-12 16:55:25 [INFO] __main__: Сохранено 5 номеров для Гостиница Легенды Байкала
+2026-11-12 16:55:25 [INFO] __main__: Запрашиваю gostevoj_dom_sibirskij (gostevoj_dom_sibirskij)
+2026-11-12 16:55:26 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Сибирский
+2026-11-12 16:55:26 [INFO] __main__: Запрашиваю wind_lake_guest_house (wind_lake_guest_house)
+2026-11-12 16:55:29 [INFO] __main__: Сохранено 0 номеров для Wind Lake
+2026-11-12 16:55:29 [INFO] __main__: Запрашиваю irkutsk_city_lodge (irkutsk_city_lodge)
+2026-11-12 16:55:30 [INFO] __main__: Сохранено 0 номеров для Отель Иркутск Сити Лодж
+2026-11-12 16:55:30 [INFO] __main__: Запрашиваю dom_baykal_guest_house (dom_baykal_guest_house)
+2026-11-12 16:55:32 [INFO] __main__: Сохранено 4 номеров для Меблированные комнаты Дом Байкал
+2026-11-12 16:55:32 [INFO] __main__: Запрашиваю glamping_snezhnye_gusi_v_baykalske (glamping_snezhnye_gusi_v_baykalske)
+2026-11-12 16:55:35 [INFO] __main__: Сохранено 1 номеров для Снежные Гуси в Байкальске
+2026-11-12 16:55:35 [INFO] __main__: Запрашиваю chastny_dom_na_peskakh_guest_house (chastny_dom_na_peskakh_guest_house)
+2026-11-12 16:55:35 [INFO] __main__: Сохранено 4 номеров для Гостевой Дом На Песках
+2026-11-12 16:55:35 [INFO] __main__: Запрашиваю brusinka (brusinka)
+2026-11-12 16:55:36 [INFO] __main__: Сохранено 1 номеров для Меблированные комнаты Брусника
+2026-11-12 16:55:36 [INFO] __main__: Запрашиваю royal_hotel_33 (royal_hotel_33)
+2026-11-12 16:55:40 [INFO] __main__: Сохранено 0 номеров для Отель Рояль
+2026-11-12 16:55:40 [INFO] __main__: Запрашиваю timyyan_guest_house (timyyan_guest_house)
+2026-11-12 16:55:42 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Тимьян
+2026-11-12 16:55:42 [INFO] __main__: Запрашиваю hotel_arakhis (hotel_arakhis)
+2026-11-12 16:55:42 [INFO] __main__: Сохранено 1 номеров для Отель Арахис
+2026-11-12 16:55:42 [INFO] __main__: Запрашиваю minihotel_panda (minihotel_panda)
+2026-11-12 16:55:44 [INFO] __main__: Сохранено 0 номеров для Отель ДиаДэй
+2026-11-12 16:55:44 [INFO] __main__: Запрашиваю camping_yelochka_kempinghotel (camping_yelochka_kempinghotel)
+2026-11-12 16:55:48 [INFO] __main__: Сохранено 6 номеров для Отель Елочка
+2026-11-12 16:55:48 [INFO] __main__: Запрашиваю bely_bereg (bely_bereg)
+2026-11-12 16:55:48 [INFO] __main__: Сохранено 2 номеров для Отель Белый берег
+2026-11-12 16:55:48 [INFO] __main__: Запрашиваю hostel_diviziya (hostel_diviziya)
+2026-11-12 16:55:51 [INFO] __main__: Сохранено 1 номеров для Хостел Дивизия
+2026-11-12 16:55:51 [INFO] __main__: Запрашиваю lada_8 (lada_8)
+2026-11-12 16:55:55 [INFO] __main__: Сохранено 0 номеров для Отель Гостиница ЛАДА
+2026-11-12 16:55:55 [INFO] __main__: Запрашиваю vysotka_hostel (vysotka_hostel)
+2026-11-12 16:55:57 [INFO] __main__: Сохранено 0 номеров для Хостел Высотка
+2026-11-12 16:55:57 [INFO] __main__: Запрашиваю hotel_nikola_2 (hotel_nikola_2)
+2026-11-12 16:56:00 [INFO] __main__: Сохранено 8 номеров для Отель Никола
+2026-11-12 16:56:00 [INFO] __main__: Запрашиваю modul (modul)
+2026-11-12 16:56:01 [INFO] __main__: Сохранено 0 номеров для Гостиница Комфорт
+2026-11-12 16:56:01 [INFO] __main__: Запрашиваю gostevoj_dom_uyutnaya_lisa (gostevoj_dom_uyutnaya_lisa)
+2026-11-12 16:56:05 [INFO] __main__: Сохранено 2 номеров для Гостевой дом Уютная лиса
+2026-11-12 16:56:05 [INFO] __main__: Запрашиваю na_beregu_baykala_private_house_2 (na_beregu_baykala_private_house_2)
+2026-11-12 16:56:05 [INFO] __main__: Сохранено 1 номеров для Частный дом на Байкале
+2026-11-12 16:56:05 [INFO] __main__: Запрашиваю savanna_private_house (savanna_private_house)
+2026-11-12 16:56:05 [INFO] __main__: Сохранено 1 номеров для Частный дом Savanna
+2026-11-12 16:56:05 [INFO] __main__: Запрашиваю guest_house_vremena_goda (guest_house_vremena_goda)
+2026-11-12 16:56:07 [INFO] __main__: Сохранено 0 номеров для Времена Года
+2026-11-12 16:56:07 [INFO] __main__: Запрашиваю trakstop_38_2 (trakstop_38_2)
+2026-11-12 16:56:10 [INFO] __main__: Сохранено 1 номеров для Тракстоп 38
+2026-11-12 16:56:10 [INFO] __main__: Запрашиваю vostochnaia (vostochnaia)
+2026-11-12 16:56:11 [INFO] __main__: Сохранено 0 номеров для Гостиница Восточная
+2026-11-12 16:56:11 [INFO] __main__: Запрашиваю blagoustroennaya_yurta_na_olkhone_bungalow (blagoustroennaya_yurta_na_olkhone_bungalow)
+2026-11-12 16:56:11 [INFO] __main__: Сохранено 1 номеров для Бунгало Благоустроенная юрта на Ольхоне
+2026-11-12 16:56:11 [INFO] __main__: Запрашиваю tri_kita_2 (tri_kita_2)
+2026-11-12 16:56:12 [INFO] __main__: Сохранено 6 номеров для Отель Три Кита
+2026-11-12 16:56:12 [INFO] __main__: Запрашиваю bajkalskie_sezonyi (bajkalskie_sezonyi)
+2026-11-12 16:56:14 [INFO] __main__: Сохранено 6 номеров для Отель Парк Байкальские сезоны
+2026-11-12 16:56:14 [INFO] __main__: Запрашиваю alpari (alpari)
+2026-11-12 16:56:14 [INFO] __main__: Сохранено 3 номеров для Гостиница Альпари
+2026-11-12 16:56:14 [INFO] __main__: Запрашиваю belaya_vershina_guest_house (belaya_vershina_guest_house)
+2026-11-12 16:56:17 [INFO] __main__: Сохранено 2 номеров для Гостевой дом Белая вершина
+2026-11-12 16:56:17 [INFO] __main__: Запрашиваю kharbor (kharbor)
+2026-11-12 16:56:18 [INFO] __main__: Сохранено 0 номеров для Гостиница Харбор
+2026-11-12 16:56:18 [INFO] __main__: Запрашиваю hotel_gostinitsa_avtovokzal (hotel_gostinitsa_avtovokzal)
+2026-11-12 16:56:19 [INFO] __main__: Сохранено 4 номеров для Отель Автовокзал
+2026-11-12 16:56:19 [INFO] __main__: Запрашиваю kheyvitsa_guest_house (kheyvitsa_guest_house)
+2026-11-12 16:56:22 [INFO] __main__: Сохранено 4 номеров для Отель Гостевой Дом Хейвица
+2026-11-12 16:56:22 [INFO] __main__: Запрашиваю aerobratsk (aerobratsk)
+2026-11-12 16:56:23 [INFO] __main__: Сохранено 1 номеров для Отель Аэропорт Братск
+2026-11-12 16:56:23 [INFO] __main__: Запрашиваю hotel_gostinitsa_dinamo (hotel_gostinitsa_dinamo)
+2026-11-12 16:56:24 [INFO] __main__: Сохранено 5 номеров для Отель Динамо
+2026-11-12 16:56:24 [INFO] __main__: Запрашиваю mini_hotel_vizit (mini_hotel_vizit)
+2026-11-12 16:56:26 [INFO] __main__: Сохранено 2 номеров для Гостиница Визит
+2026-11-12 16:56:26 [INFO] __main__: Запрашиваю hotel_kurshavel_ (hotel_kurshavel_)
+2026-11-12 16:56:28 [INFO] __main__: Сохранено 4 номеров для Отель Куршавель
+2026-11-12 16:56:28 [INFO] __main__: Запрашиваю irkutsk_na_bajkalskoj_hostel (irkutsk_na_bajkalskoj_hostel)
+2026-11-12 16:56:29 [INFO] __main__: Сохранено 1 номеров для Хостел Иркутск на Байкальской
+2026-11-12 16:56:29 [INFO] __main__: Запрашиваю hostelyi_rus_irkutsk (hostelyi_rus_irkutsk)
+2026-11-12 16:56:30 [INFO] __main__: Сохранено 1 номеров для Хостел Рус - Иркутск
+2026-11-12 16:56:30 [INFO] __main__: Запрашиваю hotel_yubileinaya__2 (hotel_yubileinaya__2)
+2026-11-12 16:56:31 [INFO] __main__: Сохранено 6 номеров для Гостиница Юбилейная
+2026-11-12 16:56:31 [INFO] __main__: Запрашиваю sibir_i_ya_recreation_camp (sibir_i_ya_recreation_camp)
+2026-11-12 16:56:33 [INFO] __main__: Сохранено 0 номеров для База отдыха Сибирь и Я
+2026-11-12 16:56:33 [INFO] __main__: Запрашиваю hotel_olimpiada (hotel_olimpiada)
+2026-11-12 16:56:37 [INFO] __main__: Сохранено 5 номеров для Олимпиада
+2026-11-12 16:56:37 [INFO] __main__: Запрашиваю larus (larus)
+2026-11-12 16:56:41 [INFO] __main__: Сохранено 0 номеров для Отель Ларус
+2026-11-12 16:56:41 [INFO] __main__: Запрашиваю profsoyuznaya_hotel_4 (profsoyuznaya_hotel_4)
+2026-11-12 16:56:42 [INFO] __main__: Сохранено 1 номеров для Профсоюзная
+2026-11-12 16:56:42 [INFO] __main__: Запрашиваю green_hotel_ (green_hotel_)
+2026-11-12 16:56:45 [INFO] __main__: Сохранено 6 номеров для Грин Отель
+2026-11-12 16:56:45 [INFO] __main__: Запрашиваю gostevoj_dom_na_zvezdinskoj (gostevoj_dom_na_zvezdinskoj)
+2026-11-12 16:56:47 [INFO] __main__: Сохранено 3 номеров для Отель на Звездинской
+2026-11-12 16:56:47 [INFO] __main__: Запрашиваю guest_house_bajkalskie_matryoshki (guest_house_bajkalskie_matryoshki)
+2026-11-12 16:56:49 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Байкальские матрёшки
+2026-11-12 16:56:49 [INFO] __main__: Запрашиваю filokseniya_olkhon_guest_house (filokseniya_olkhon_guest_house)
+2026-11-12 16:56:59 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Филоксения - Ольхон
+2026-11-12 16:56:59 [INFO] __main__: Запрашиваю kalina_house_olkhon_baikal_guest_house (kalina_house_olkhon_baikal_guest_house)
+2026-11-12 16:57:03 [INFO] __main__: Сохранено 2 номеров для Гостевой дом Конкордия - ощути гармонию Байкала
+2026-11-12 16:57:03 [INFO] __main__: Запрашиваю hotel_rodina_grand_hotel_spa_irkutsk_5 (hotel_rodina_grand_hotel_spa_irkutsk_5)
+2026-11-12 16:57:03 [INFO] __main__: Сохранено 11 номеров для Отель RODINA Grand Hotel & SPA Irkutsk 5*
+2026-11-12 16:57:03 [INFO] __main__: Запрашиваю v_samom_tsentre_irkutska_minihotel (v_samom_tsentre_irkutska_minihotel)
+2026-11-12 16:57:03 [INFO] __main__: Сохранено 1 номеров для Отель В Сердце Иркутска
+2026-11-12 16:57:03 [INFO] __main__: Запрашиваю turbaza_usadba_nabaimar (turbaza_usadba_nabaimar)
+2026-11-12 16:57:08 [INFO] __main__: Сохранено 5 номеров для База отдыха Усадьба Набаймар
+2026-11-12 16:57:08 [INFO] __main__: Запрашиваю artrezidentsiya_port_olhon (artrezidentsiya_port_olhon)
+2026-11-12 16:57:09 [INFO] __main__: Сохранено 0 номеров для Арт-отель Порт Ольхон
+2026-11-12 16:57:09 [INFO] __main__: Запрашиваю ozerny_tulun_sports_complex_na_karbysheva_185_apartment (ozerny_tulun_sports_complex_na_karbysheva_185_apartment)
+2026-11-12 16:57:10 [INFO] __main__: Сохранено 1 номеров для Спорткомплекс Озерный Тулун на Карбышева 185
+2026-11-12 16:57:10 [INFO] __main__: Запрашиваю yupiter_guest_house (yupiter_guest_house)
+2026-11-12 16:57:11 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Юпитер
+2026-11-12 16:57:11 [INFO] __main__: Запрашиваю amurskiy (amurskiy)
+2026-11-12 16:57:12 [INFO] __main__: Сохранено 5 номеров для Отель Амурский
+2026-11-12 16:57:12 [INFO] __main__: Запрашиваю tengis_park_hotel (tengis_park_hotel)
+2026-11-12 16:57:24 [INFO] __main__: Сохранено 0 номеров для Отель Тэнгис
+2026-11-12 16:57:24 [INFO] __main__: Запрашиваю eko_baikalwood_hotel (eko_baikalwood_hotel)
+2026-11-12 16:57:26 [INFO] __main__: Сохранено 0 номеров для Отель Белая Чайка
+2026-11-12 16:57:26 [INFO] __main__: Запрашиваю rezidentsii_rodina_irkutsk (rezidentsii_rodina_irkutsk)
+2026-11-12 16:57:27 [INFO] __main__: Сохранено 3 номеров для Резиденции Rodina Irkutsk
+2026-11-12 16:57:27 [INFO] __main__: Запрашиваю usada_eremeevyih (usada_eremeevyih)
+2026-11-12 16:57:28 [INFO] __main__: Сохранено 0 номеров для Усадьба Еремеевых
+2026-11-12 16:57:28 [INFO] __main__: Запрашиваю baikalskie_prostory (baikalskie_prostory)
+2026-11-12 16:57:29 [INFO] __main__: Сохранено 5 номеров для Гостевой Дом Байкальские просторы
+2026-11-12 16:57:29 [INFO] __main__: Запрашиваю flagman_hotel_4 (flagman_hotel_4)
+2026-11-12 16:57:32 [INFO] __main__: Сохранено 3 номеров для Отель Флагман
+2026-11-12 16:57:32 [INFO] __main__: Запрашиваю aeroport_siti_lodzh_hotel (aeroport_siti_lodzh_hotel)
+2026-11-12 16:57:35 [INFO] __main__: Сохранено 1 номеров для Гостиница Аэропорт Сити Лодж
+2026-11-12 16:57:35 [INFO] __main__: Запрашиваю domik_na_kholme_guest_house (domik_na_kholme_guest_house)
+2026-11-12 16:57:36 [INFO] __main__: Сохранено 0 номеров для Меблированные комнаты Домик на холме
+2026-11-12 16:57:36 [INFO] __main__: Запрашиваю baza_otdykha_ekopark_yuzhny_baykal_recreation_center (baza_otdykha_ekopark_yuzhny_baykal_recreation_center)
+2026-11-12 16:57:38 [INFO] __main__: Сохранено 0 номеров для База отдыха Экопарк Южный Байкал
+2026-11-12 16:57:38 [INFO] __main__: Запрашиваю katantsa_hotel (katantsa_hotel)
+2026-11-12 16:57:40 [INFO] __main__: Сохранено 0 номеров для Отель Катанца
+2026-11-12 16:57:40 [INFO] __main__: Запрашиваю uyutny_v_p_bolshoye_goloustnoye_private_house (uyutny_v_p_bolshoye_goloustnoye_private_house)
+2026-11-12 16:57:41 [INFO] __main__: Сохранено 0 номеров для Частный дом Уютный в п. Большое Голоустное
+2026-11-12 16:57:41 [INFO] __main__: Запрашиваю aura_living_quarters (aura_living_quarters)
+2026-11-12 16:57:43 [INFO] __main__: Сохранено 0 номеров для Меблированные комнаты Аура
+2026-11-12 16:57:43 [INFO] __main__: Запрашиваю good_morning_3 (good_morning_3)
+2026-11-12 16:57:46 [INFO] __main__: Сохранено 1 номеров для База отдыха Доброе Утро
+2026-11-12 16:57:46 [INFO] __main__: Запрашиваю tikhiy_dvorik_guest_house_4 (tikhiy_dvorik_guest_house_4)
+2026-11-12 16:57:48 [INFO] __main__: Сохранено 0 номеров для Частный дом Тихий дворик
+2026-11-12 16:57:48 [INFO] __main__: Запрашиваю uyutny_na_pervoy_linii_private_house (uyutny_na_pervoy_linii_private_house)
+2026-11-12 16:57:50 [INFO] __main__: Сохранено 0 номеров для Частный дом уютный на первой линии
+2026-11-12 16:57:50 [INFO] __main__: Запрашиваю gostevoy_dom_skazki_baykala (gostevoy_dom_skazki_baykala)
+2026-11-12 16:57:51 [INFO] __main__: Сохранено 0 номеров для Гостевой Дом Сказки Байкала
+2026-11-12 16:57:51 [INFO] __main__: Запрашиваю dom_serdtse_baykala_guest_house (dom_serdtse_baykala_guest_house)
+2026-11-12 16:57:53 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Дом Сердце Байкала
+2026-11-12 16:57:53 [INFO] __main__: Запрашиваю miniotel_serdtse_baykala (miniotel_serdtse_baykala)
+2026-11-12 16:57:53 [INFO] __main__: Сохранено 2 номеров для Сердце Байкала
+2026-11-12 16:57:53 [INFO] __main__: Запрашиваю uyutny_komfortny_na_baykale_so_vsem_neobkhodimym_private_house (uyutny_komfortny_na_baykale_so_vsem_neobkhodimym_private_house)
+2026-11-12 16:57:55 [INFO] __main__: Сохранено 0 номеров для Частный Дом Уютный Комфортный на Байкале со Всем Необходимым
+2026-11-12 16:57:55 [INFO] __main__: Запрашиваю barny_private_house (barny_private_house)
+2026-11-12 16:57:57 [INFO] __main__: Сохранено 0 номеров для Частный дом Barny
+2026-11-12 16:57:57 [INFO] __main__: Запрашиваю traditsionny_dlya_vashey_semyi_private_house (traditsionny_dlya_vashey_semyi_private_house)
+2026-11-12 16:57:59 [INFO] __main__: Сохранено 0 номеров для Частный дом Традиционный для Вашей Семьи
+2026-11-12 16:57:59 [INFO] __main__: Запрашиваю forest_home_uluchshenny_private_house (forest_home_uluchshenny_private_house)
+2026-11-12 16:58:01 [INFO] __main__: Сохранено 0 номеров для Частный дом Forest Home улучшенный
+2026-11-12 16:58:01 [INFO] __main__: Запрашиваю dom_1_s_panoramnym_vidom_na_ozero_private_house (dom_1_s_panoramnym_vidom_na_ozero_private_house)
+2026-11-12 16:58:03 [INFO] __main__: Сохранено 0 номеров для Частный дом Дом 1 с панорамным видом на озеро
+2026-11-12 16:58:03 [INFO] __main__: Запрашиваю mini_barnhouse_private_house_3 (mini_barnhouse_private_house_3)
+2026-11-12 16:58:04 [INFO] __main__: Сохранено 0 номеров для Частный дом Барнпарк МиниБарнхаус 2
+2026-11-12 16:58:04 [INFO] __main__: Запрашиваю barn_khaus_private_house_2 (barn_khaus_private_house_2)
+2026-11-12 16:58:06 [INFO] __main__: Сохранено 0 номеров для Частный дом Барнпарк Барнхаус 2
+2026-11-12 16:58:06 [INFO] __main__: Запрашиваю pervaya_liniya_guest_house_2 (pervaya_liniya_guest_house_2)
+2026-11-12 16:58:07 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Первая Линия
+2026-11-12 16:58:07 [INFO] __main__: Запрашиваю v_derevne_guest_house (v_derevne_guest_house)
+2026-11-12 16:58:09 [INFO] __main__: Сохранено 0 номеров для Уютный дом
+2026-11-12 16:58:09 [INFO] __main__: Запрашиваю kaminny_domik_na_baykale_guest_house (kaminny_domik_na_baykale_guest_house)
+2026-11-12 16:58:12 [INFO] __main__: Сохранено 1 номеров для Частный дом Каминный домик на Байкале
+2026-11-12 16:58:12 [INFO] __main__: Запрашиваю recreation_camp_baykalskie_gusi (recreation_camp_baykalskie_gusi)
+2026-11-12 16:58:13 [INFO] __main__: Сохранено 6 номеров для Гостевой дом Байкальские Гуси
+2026-11-12 16:58:13 [INFO] __main__: Запрашиваю olkhon_rest_guest_house (olkhon_rest_guest_house)
+2026-11-12 16:58:13 [INFO] __main__: Сохранено 5 номеров для Гостевой Дом Olkhon Rest
+2026-11-12 16:58:13 [INFO] __main__: Запрашиваю praskovya_guest_house (praskovya_guest_house)
+2026-11-12 16:58:16 [INFO] __main__: Сохранено 3 номеров для Отель Прасковья
+2026-11-12 16:58:16 [INFO] __main__: Запрашиваю angarskie_khutora_private_house (angarskie_khutora_private_house)
+2026-11-12 16:58:18 [INFO] __main__: Сохранено 0 номеров для Частный Дом Домик в LESU
+2026-11-12 16:58:18 [INFO] __main__: Запрашиваю to_samoye_mesto_v_baykalske_private_house (to_samoye_mesto_v_baykalske_private_house)
+2026-11-12 16:58:20 [INFO] __main__: Сохранено 0 номеров для Частный дом То Самое Место в Байкальске
+2026-11-12 16:58:20 [INFO] __main__: Запрашиваю izumrud_hotel_7 (izumrud_hotel_7)
+2026-11-12 16:58:22 [INFO] __main__: Сохранено 4 номеров для Отель Изумруд
+2026-11-12 16:58:22 [INFO] __main__: Запрашиваю treugolny_u_baykala_private_house (treugolny_u_baykala_private_house)
+2026-11-12 16:58:23 [INFO] __main__: Сохранено 0 номеров для Частный Дом Треугольный у Байкала
+2026-11-12 16:58:23 [INFO] __main__: Запрашиваю u_samogo_serdtsa_baykala_private_house (u_samogo_serdtsa_baykala_private_house)
+2026-11-12 16:58:25 [INFO] __main__: Сохранено 0 номеров для Частный Дом у Самого Сердца Байкала
+2026-11-12 16:58:25 [INFO] __main__: Запрашиваю lisyya_nora_private_house (lisyya_nora_private_house)
+2026-11-12 16:58:27 [INFO] __main__: Сохранено 0 номеров для Частный дом Лисья Нора
+2026-11-12 16:58:27 [INFO] __main__: Запрашиваю dom_baikal (dom_baikal)
+2026-11-12 16:58:37 [INFO] __main__: Сохранено 0 номеров для Частный дом порт  Байкал
+2026-11-12 16:58:37 [INFO] __main__: Запрашиваю private_house_uedinenny_dom_na_beregu_zhivopisnoy_zavodi (private_house_uedinenny_dom_na_beregu_zhivopisnoy_zavodi)
+2026-11-12 16:58:38 [INFO] __main__: Сохранено 0 номеров для Байкал 51
+2026-11-12 16:58:38 [INFO] __main__: Запрашиваю magnetit (magnetit)
+2026-11-12 16:58:38 [INFO] __main__: Сохранено 7 номеров для Отель Магнетит
+2026-11-12 16:58:38 [INFO] __main__: Запрашиваю baikal_holiday_aparthotel (baikal_holiday_aparthotel)
+2026-11-12 16:58:42 [INFO] __main__: Сохранено 1 номеров для База отдыха Байкал Холидей
+2026-11-12 16:58:42 [INFO] __main__: Запрашиваю krestovaya_pad_hotel (krestovaya_pad_hotel)
+2026-11-12 16:58:45 [INFO] __main__: Сохранено 0 номеров для Гостиница Крестовая падь
+2026-11-12 16:58:45 [INFO] __main__: Запрашиваю gostevoy_dom_chilla_villa_baikal (gostevoy_dom_chilla_villa_baikal)
+2026-11-12 16:58:57 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Chilla_villa_baikal
+2026-11-12 16:58:57 [INFO] __main__: Запрашиваю panorama_guest_house_5 (panorama_guest_house_5)
+2026-11-12 16:59:01 [INFO] __main__: Сохранено 1 номеров для Гостевой дом Панорама
+2026-11-12 16:59:01 [INFO] __main__: Запрашиваю gostevoy_domik_sredi_sosen_chalet (gostevoy_domik_sredi_sosen_chalet)
+2026-11-12 16:59:03 [INFO] __main__: Сохранено 0 номеров для Шале Гостевой домик Среди Сосен
+2026-11-12 16:59:03 [INFO] __main__: Запрашиваю parus_18 (parus_18)
+2026-11-12 16:59:05 [INFO] __main__: Сохранено 0 номеров для Курортный отель Парус
+2026-11-12 16:59:05 [INFO] __main__: Запрашиваю talovskoe_guest_house_ (talovskoe_guest_house_)
+2026-11-12 16:59:06 [INFO] __main__: Сохранено 0 номеров для База отдыха Таловское
+2026-11-12 16:59:06 [INFO] __main__: Запрашиваю momant_house_recreation_camp (momant_house_recreation_camp)
+2026-11-12 16:59:08 [INFO] __main__: Сохранено 0 номеров для Momant house
+2026-11-12 16:59:08 [INFO] __main__: Запрашиваю u_lukomorya_4 (u_lukomorya_4)
+2026-11-12 16:59:10 [INFO] __main__: Сохранено 0 номеров для У Лукоморья
+2026-11-12 16:59:10 [INFO] __main__: Запрашиваю hostel_katrin_2 (hostel_katrin_2)
+2026-11-12 16:59:13 [INFO] __main__: Сохранено 2 номеров для Катрин
+2026-11-12 16:59:13 [INFO] __main__: Запрашиваю lastochka_guest_house_5 (lastochka_guest_house_5)
+2026-11-12 16:59:14 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Ласточка
+2026-11-12 16:59:14 [INFO] __main__: Запрашиваю belaya_gora_guest_house (belaya_gora_guest_house)
+2026-11-12 16:59:15 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Белая Гора
+2026-11-12 16:59:15 [INFO] __main__: Запрашиваю baikal_cedar_baikal_kedr (baikal_cedar_baikal_kedr)
+2026-11-12 16:59:18 [INFO] __main__: Сохранено 2 номеров для Гостевой дом Байкал Кедр
+2026-11-12 16:59:18 [INFO] __main__: Запрашиваю tofa_olkhon_private_house (tofa_olkhon_private_house)
+2026-11-12 16:59:19 [INFO] __main__: Сохранено 1 номеров для Частный Дом  Tofa Olkhon
+2026-11-12 16:59:19 [INFO] __main__: Запрашиваю veter_stranstvij_hotel (veter_stranstvij_hotel)
+2026-11-12 16:59:22 [INFO] __main__: Сохранено 3 номеров для База Отдыха Центр отдыха Ветер Странствий
+2026-11-12 16:59:22 [INFO] __main__: Запрашиваю khostel_tri_matrioshki_na_tereshkovoi (khostel_tri_matrioshki_na_tereshkovoi)
+2026-11-12 16:59:24 [INFO] __main__: Сохранено 0 номеров для Хостел Три Матрёшки
+2026-11-12 16:59:24 [INFO] __main__: Запрашиваю bagulnik_hotel (bagulnik_hotel)
+2026-11-12 16:59:25 [INFO] __main__: Сохранено 0 номеров для Багульник
+2026-11-12 16:59:25 [INFO] __main__: Запрашиваю miniotel_medveditsa (miniotel_medveditsa)
+2026-11-12 16:59:26 [INFO] __main__: Сохранено 4 номеров для Меблированные комнаты Медведица
+2026-11-12 16:59:26 [INFO] __main__: Запрашиваю lotos_hotel (lotos_hotel)
+2026-11-12 16:59:26 [INFO] __main__: Сохранено 4 номеров для Отель Лотос
+2026-11-12 16:59:26 [INFO] __main__: Запрашиваю arena_g_irkutsk (arena_g_irkutsk)
+2026-11-12 16:59:29 [INFO] __main__: Сохранено 3 номеров для Отель Арена Иркутск
+2026-11-12 16:59:29 [INFO] __main__: Запрашиваю hotel_parkotel_bajkal (hotel_parkotel_bajkal)
+2026-11-12 16:59:30 [INFO] __main__: Сохранено 0 номеров для База отдыха Парк-отель Байкал
+2026-11-12 16:59:30 [INFO] __main__: Запрашиваю tikhaya_gavan_4 (tikhaya_gavan_4)
+2026-11-12 16:59:34 [INFO] __main__: Сохранено 2 номеров для Отель "Тихая Гавань"
+2026-11-12 16:59:34 [INFO] __main__: Запрашиваю rodnye_berega_holiday_park_ (rodnye_berega_holiday_park_)
+2026-11-12 16:59:35 [INFO] __main__: Сохранено 0 номеров для База Отдыха Родные Берега
+2026-11-12 16:59:35 [INFO] __main__: Запрашиваю chilla_villa_grand_guest_house_2 (chilla_villa_grand_guest_house_2)
+2026-11-12 16:59:36 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Chilla_Villa_Grand
+2026-11-12 16:59:36 [INFO] __main__: Запрашиваю hotel_barguzin (hotel_barguzin)
+2026-11-12 16:59:37 [INFO] __main__: Сохранено 4 номеров для Меблированные комнаты Баргузин
+2026-11-12 16:59:37 [INFO] __main__: Запрашиваю baza_otdykha_village_hvoy (baza_otdykha_village_hvoy)
+2026-11-12 16:59:37 [INFO] __main__: Сохранено 4 номеров для Вилладж Хвоя
+2026-11-12 16:59:37 [INFO] __main__: Запрашиваю baza_otdykha_akvamarin (baza_otdykha_akvamarin)
+2026-11-12 16:59:46 [INFO] __main__: Сохранено 0 номеров для Аквамарин
+2026-11-12 16:59:46 [INFO] __main__: Запрашиваю baikalsk_cottage_private_house (baikalsk_cottage_private_house)
+2026-11-12 16:59:47 [INFO] __main__: Сохранено 0 номеров для Частный дом Baikalsk Cottage
+2026-11-12 16:59:47 [INFO] __main__: Запрашиваю gostevoi_dom_margobai (gostevoi_dom_margobai)
+2026-11-12 16:59:51 [INFO] __main__: Сохранено 7 номеров для Отель Маргобай
+2026-11-12 16:59:51 [INFO] __main__: Запрашиваю recreation_camp_mayak_38 (recreation_camp_mayak_38)
+2026-11-12 16:59:51 [INFO] __main__: Сохранено 1 номеров для База отдыха Маяк 38
+2026-11-12 16:59:51 [INFO] __main__: Запрашиваю arena_on_sverdlov (arena_on_sverdlov)
+2026-11-12 16:59:54 [INFO] __main__: Сохранено 6 номеров для Меблированные комнаты общежитие "Арена на Свердлова"
+2026-11-12 16:59:54 [INFO] __main__: Запрашиваю gloria_20 (gloria_20)
+2026-11-12 16:59:57 [INFO] __main__: Сохранено 3 номеров для Отель Глория
+2026-11-12 16:59:57 [INFO] __main__: Запрашиваю oktyabrskaya_minihotel (oktyabrskaya_minihotel)
+2026-11-12 16:59:59 [INFO] __main__: Сохранено 3 номеров для Октябрьская
+2026-11-12 16:59:59 [INFO] __main__: Запрашиваю dream_of_baikal_hotel (dream_of_baikal_hotel)
+2026-11-12 17:00:01 [INFO] __main__: Сохранено 0 номеров для Отель Dream of Baikal
+2026-11-12 17:00:01 [INFO] __main__: Запрашиваю _0x3bd74 (_0x3bd74)
+2026-11-12 17:00:04 [INFO] __main__: Сохранено 9 номеров для Санаторий Солнечный
+2026-11-12 17:00:04 [INFO] __main__: Запрашиваю gostevoy_dom_baykalskoye_pomestye (gostevoy_dom_baykalskoye_pomestye)
+2026-11-12 17:00:05 [INFO] __main__: Сохранено 1 номеров для Гостевой Дом Байкальское Поместье-Листвянка
+2026-11-12 17:00:05 [INFO] __main__: Запрашиваю alaniya (alaniya)
+2026-11-12 17:00:05 [INFO] __main__: Сохранено 1 номеров для Алания
+2026-11-12 17:00:05 [INFO] __main__: Запрашиваю hotel_baikal_best_edelweiss (hotel_baikal_best_edelweiss)
+2026-11-12 17:00:09 [INFO] __main__: Сохранено 2 номеров для Отель Байкал Эдельвейс
+2026-11-12 17:00:09 [INFO] __main__: Запрашиваю pribaikalskaya_hotel (pribaikalskaya_hotel)
+2026-11-12 17:00:10 [INFO] __main__: Сохранено 6 номеров для Гостиница Прибайкальская
+2026-11-12 17:00:10 [INFO] __main__: Запрашиваю hotel_kosmos_5 (hotel_kosmos_5)
+2026-11-12 17:00:11 [INFO] __main__: Сохранено 4 номеров для Отель Космос
+2026-11-12 17:00:11 [INFO] __main__: Запрашиваю metelitsa_6 (metelitsa_6)
+2026-11-12 17:00:15 [INFO] __main__: Сохранено 3 номеров для Отель Метелица
+2026-11-12 17:00:15 [INFO] __main__: Запрашиваю saturn_8 (saturn_8)
+2026-11-12 17:00:19 [INFO] __main__: Сохранено 0 номеров для Отель Сатурн
+2026-11-12 17:00:19 [INFO] __main__: Запрашиваю olkhon_house_guest_family_house (olkhon_house_guest_family_house)
+2026-11-12 17:00:20 [INFO] __main__: Сохранено 0 номеров для Olkhon Family House
+2026-11-12 17:00:20 [INFO] __main__: Запрашиваю khoromy_recreation_camp (khoromy_recreation_camp)
+2026-11-12 17:00:21 [INFO] __main__: Сохранено 1 номеров для Хоромы
+2026-11-12 17:00:21 [INFO] __main__: Запрашиваю planeta_9 (planeta_9)
+2026-11-12 17:00:24 [INFO] __main__: Сохранено 4 номеров для Планета
+2026-11-12 17:00:24 [INFO] __main__: Запрашиваю irkutsk_hostel_na_furye_hostel (irkutsk_hostel_na_furye_hostel)
+2026-11-12 17:00:25 [INFO] __main__: Сохранено 0 номеров для Хостел Иркутск Хостел на Фурье
+2026-11-12 17:00:25 [INFO] __main__: Запрашиваю baikal_capsule_hostel (baikal_capsule_hostel)
+2026-11-12 17:00:28 [INFO] __main__: Сохранено 1 номеров для Baikal Capsule (Байкал Капсула)
+2026-11-12 17:00:28 [INFO] __main__: Запрашиваю hostel_sovetskiy (hostel_sovetskiy)
+2026-11-12 17:00:28 [INFO] __main__: Сохранено 2 номеров для Гостевой дом Советский
+2026-11-12 17:00:28 [INFO] __main__: Запрашиваю sobolek (sobolek)
+2026-11-12 17:00:31 [INFO] __main__: Сохранено 2 номеров для Соболёк
+2026-11-12 17:00:31 [INFO] __main__: Запрашиваю baikal_hill_residence (baikal_hill_residence)
+2026-11-12 17:00:34 [INFO] __main__: Сохранено 2 номеров для Baikal Hill Residence (Байкал Хилл Резиденс)
+2026-11-12 17:00:34 [INFO] __main__: Запрашиваю na_baykale_private_house_4 (na_baykale_private_house_4)
+2026-11-12 17:00:35 [INFO] __main__: Сохранено 1 номеров для Частный дом на Байкале
+2026-11-12 17:00:35 [INFO] __main__: Запрашиваю camping_turbaza_na_olkhone_chasha_chingiskhana (camping_turbaza_na_olkhone_chasha_chingiskhana)
+2026-11-12 17:00:36 [INFO] __main__: Сохранено 2 номеров для База отдыха Чаша Чингисхана
+2026-11-12 17:00:36 [INFO] __main__: Запрашиваю rasko_design_home_on_4th_railway_street (rasko_design_home_on_4th_railway_street)
+2026-11-12 17:00:39 [INFO] __main__: Сохранено 1 номеров для Rasko Design Home на улице 4-я Железнодорожная
+2026-11-12 17:00:39 [INFO] __main__: Запрашиваю usadyba_magamagiya_guest_house (usadyba_magamagiya_guest_house)
+2026-11-12 17:00:40 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Усадьба МАГАмагия
+2026-11-12 17:00:40 [INFO] __main__: Запрашиваю na_beregovoy_6_private_house (na_beregovoy_6_private_house)
+2026-11-12 17:00:42 [INFO] __main__: Сохранено 0 номеров для Частный дом на Береговой 6
+2026-11-12 17:00:42 [INFO] __main__: Запрашиваю uyutnye_domiki_v_listvyanke_bungalow (uyutnye_domiki_v_listvyanke_bungalow)
+2026-11-12 17:00:43 [INFO] __main__: Сохранено 1 номеров для Бунгало Уютные домики в Листвянке
+2026-11-12 17:00:43 [INFO] __main__: Запрашиваю maksi_hotel (maksi_hotel)
+2026-11-12 17:00:44 [INFO] __main__: Сохранено 1 номеров для Отель Макси
+2026-11-12 17:00:44 [INFO] __main__: Запрашиваю gostevoj_dom_bajkalska_tajga (gostevoj_dom_bajkalska_tajga)
+2026-11-12 17:00:44 [INFO] __main__: Сохранено 1 номеров для Байкальска тайга
+2026-11-12 17:00:44 [INFO] __main__: Запрашиваю recreation_camp_ozarimo_ekopark_dushavin (recreation_camp_ozarimo_ekopark_dushavin)
+2026-11-12 17:00:45 [INFO] __main__: Сохранено 1 номеров для База отдыха Озаримо
+2026-11-12 17:00:45 [INFO] __main__: Запрашиваю baykkalina_guest_house (baykkalina_guest_house)
+2026-11-12 17:00:45 [INFO] __main__: Сохранено 3 номеров для БайкКалина
+2026-11-12 17:00:45 [INFO] __main__: Запрашиваю aleksandrovskij_dvor (aleksandrovskij_dvor)
+2026-11-12 17:00:48 [INFO] __main__: Сохранено 1 номеров для Александровский двор
+2026-11-12 17:00:48 [INFO] __main__: Запрашиваю uyutny_s_dvumya_komnatami_private_house (uyutny_s_dvumya_komnatami_private_house)
+2026-11-12 17:00:48 [INFO] __main__: Сохранено 1 номеров для Частный Дом Уютный с Двумя Комнатами
+2026-11-12 17:00:48 [INFO] __main__: Запрашиваю island_of_7_poplars (island_of_7_poplars)
+2026-11-12 17:00:50 [INFO] __main__: Сохранено 1 номеров для Остров 7 тополей
+2026-11-12 17:00:50 [INFO] __main__: Запрашиваю houses_in_the_village_of_bolshoe_goloustnoe (houses_in_the_village_of_bolshoe_goloustnoe)
+2026-11-12 17:00:53 [INFO] __main__: Сохранено 2 номеров для Домики в поселке Большое Голоустное
+2026-11-12 17:00:53 [INFO] __main__: Запрашиваю na_beregu_baykala_guest_house (na_beregu_baykala_guest_house)
+2026-11-12 17:00:53 [INFO] __main__: Сохранено 1 номеров для На берегу Байкала
+2026-11-12 17:00:53 [INFO] __main__: Запрашиваю recreation_camp_sobolek (recreation_camp_sobolek)
+2026-11-12 17:00:54 [INFO] __main__: Сохранено 2 номеров для База отдыха Соболёк
+2026-11-12 17:00:54 [INFO] __main__: Запрашиваю na_lugovoy_guest_house_3 (na_lugovoy_guest_house_3)
+2026-11-12 17:00:55 [INFO] __main__: Сохранено 0 номеров для Гостевой дом на Луговой
+2026-11-12 17:00:55 [INFO] __main__: Запрашиваю blagoustroyennaya_dvukhmestnaya_komnata (blagoustroyennaya_dvukhmestnaya_komnata)
+2026-11-12 17:00:57 [INFO] __main__: Сохранено 0 номеров для Жилое помещение Благоустроенная Двухместная Комната
+2026-11-12 17:00:57 [INFO] __main__: Запрашиваю na_baykale_private_house_2 (na_baykale_private_house_2)
+2026-11-12 17:00:58 [INFO] __main__: Сохранено 0 номеров для Частный дом На Байкале
+2026-11-12 17:00:58 [INFO] __main__: Запрашиваю barnhouse_dvukhetazhny_private_house (barnhouse_dvukhetazhny_private_house)
+2026-11-12 17:01:00 [INFO] __main__: Сохранено 0 номеров для Частный дом Барнпарк Барнхаус 1
+2026-11-12 17:01:00 [INFO] __main__: Запрашиваю baza_otdyha_kosmos (baza_otdyha_kosmos)
+2026-11-12 17:01:03 [INFO] __main__: Сохранено 2 номеров для База отдыха Космос
+2026-11-12 17:01:03 [INFO] __main__: Запрашиваю glempingotel_yolki_recreation_camp (glempingotel_yolki_recreation_camp)
+2026-11-12 17:01:04 [INFO] __main__: Сохранено 0 номеров для Аян
+2026-11-12 17:01:04 [INFO] __main__: Запрашиваю kedr_chalet (kedr_chalet)
+2026-11-12 17:01:05 [INFO] __main__: Сохранено 1 номеров для Шале Кедр
+2026-11-12 17:01:05 [INFO] __main__: Запрашиваю posutochno_private_house_3 (posutochno_private_house_3)
+2026-11-12 17:01:06 [INFO] __main__: Сохранено 0 номеров для Частный дом посуточно
+2026-11-12 17:01:06 [INFO] __main__: Запрашиваю baikal_family_house (baikal_family_house)
+2026-11-12 17:01:10 [INFO] __main__: Сохранено 3 номеров для Baikal Family House (Байкал Фэмили Хаус)
+2026-11-12 17:01:10 [INFO] __main__: Запрашиваю tayozhnaya_11b_private_house (tayozhnaya_11b_private_house)
+2026-11-12 17:01:10 [INFO] __main__: Сохранено 1 номеров для Частный дом Таёжная 11Б
+2026-11-12 17:01:10 [INFO] __main__: Запрашиваю v_nikole_private_house (v_nikole_private_house)
+2026-11-12 17:01:11 [INFO] __main__: Сохранено 0 номеров для Частный дом в Николе
+2026-11-12 17:01:11 [INFO] __main__: Запрашиваю private_house_zhargal_na_baykale_private_house (private_house_zhargal_na_baykale_private_house)
+2026-11-12 17:01:13 [INFO] __main__: Сохранено 0 номеров для Частный дом "Жаргал" на Байкале
+2026-11-12 17:01:13 [INFO] __main__: Запрашиваю fortbaykal_mrc_private_house_2 (fortbaykal_mrc_private_house_2)
+2026-11-12 17:01:14 [INFO] __main__: Сохранено 1 номеров для Частный дом Форт-Байкал МРС
+2026-11-12 17:01:14 [INFO] __main__: Запрашиваю fortbaykal_mrc_private_house (fortbaykal_mrc_private_house)
+2026-11-12 17:01:14 [INFO] __main__: Сохранено 1 номеров для Частный дом Форт-Байкал МРС
+2026-11-12 17:01:14 [INFO] __main__: Запрашиваю v_russkom_stile_guest_house (v_russkom_stile_guest_house)
+2026-11-12 17:01:16 [INFO] __main__: Сохранено 0 номеров для Меблированные комнаты в Русском Стиле
+2026-11-12 17:01:16 [INFO] __main__: Запрашиваю dlya_kompanii_guest_house (dlya_kompanii_guest_house)
+2026-11-12 17:01:16 [INFO] __main__: Сохранено 1 номеров для Для компании
+2026-11-12 17:01:16 [INFO] __main__: Запрашиваю dom_na_baykale_kurkut_ledovaya_pereprava_private_house (dom_na_baykale_kurkut_ledovaya_pereprava_private_house)
+2026-11-12 17:01:18 [INFO] __main__: Сохранено 0 номеров для Частный дом Дом на Байкале Куркут Ледовая переправа
+2026-11-12 17:01:18 [INFO] __main__: Запрашиваю sosnovy_dvorik_guest_house (sosnovy_dvorik_guest_house)
+2026-11-12 17:01:20 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Сосновый дворик
+2026-11-12 17:01:20 [INFO] __main__: Запрашиваю uyutnyi_dom_olkhon_private_house (uyutnyi_dom_olkhon_private_house)
+2026-11-12 17:01:22 [INFO] __main__: Сохранено 0 номеров для Частный дом Уютный дом Ольхон
+2026-11-12 17:01:22 [INFO] __main__: Запрашиваю komilfo_2 (komilfo_2)
+2026-11-12 17:01:25 [INFO] __main__: Сохранено 6 номеров для Отель Комильфо
+2026-11-12 17:01:25 [INFO] __main__: Запрашиваю domovyonok_guest_house (domovyonok_guest_house)
+2026-11-12 17:01:27 [INFO] __main__: Сохранено 0 номеров для Гостевой дом Домовёнок
+2026-11-12 17:01:27 [INFO] __main__: Запрашиваю hotelclub_ice (hotelclub_ice)
+2026-11-12 17:01:31 [INFO] __main__: Сохранено 1 номеров для Отель Сибирская резиденция Лёд Байкала
+2026-11-12 17:01:31 [INFO] __main__: Запрашиваю belosnezhe_recreation_camp (belosnezhe_recreation_camp)
+2026-11-12 17:01:32 [INFO] __main__: Сохранено 0 номеров для База отдыха Белоснежье
+2026-11-12 17:01:32 [INFO] __main__: Запрашиваю elisha_guest_house (elisha_guest_house)
+2026-11-12 17:01:33 [INFO] __main__: Сохранено 1 номеров для Гостевой дом Елисей
+2026-11-12 17:01:33 [INFO] __main__: Запрашиваю cozy_design_studio (cozy_design_studio)
+2026-11-12 17:01:35 [INFO] __main__: Сохранено 1 номеров для Уютная дизайнерская студия
+2026-11-12 17:01:35 [INFO] __main__: Запрашиваю sweethome_on_yuri_ten_st (sweethome_on_yuri_ten_st)
+2026-11-12 17:01:36 [INFO] __main__: Сохранено 0 номеров для СвитХоум на Юрия Тена
+2026-11-12 17:01:36 [INFO] __main__: Запрашиваю sweethome_on_deputatskaya_st (sweethome_on_deputatskaya_st)
+2026-11-12 17:01:38 [INFO] __main__: Сохранено 0 номеров для СвитХоум на ул. Депутатская
+2026-11-12 17:01:38 [INFO] __main__: Запрашиваю olkhon_village_guest_house (olkhon_village_guest_house)
+2026-11-12 17:01:39 [INFO] __main__: Сохранено 1 номеров для Частный дом Olkhon Village
+2026-11-12 17:01:39 [INFO] __main__: Запрашиваю ryizhaya_sova_guest_house (ryizhaya_sova_guest_house)
+2026-11-12 17:01:42 [INFO] __main__: Сохранено 3 номеров для Гостевой дом Рыжая сова
+2026-11-12 17:01:42 [INFO] __main__: Запрашиваю blagoustroyennaya_yurta_na_olkhone_bungalow (blagoustroyennaya_yurta_na_olkhone_bungalow)
+2026-11-12 17:01:43 [INFO] __main__: Сохранено 0 номеров для Бунгало Благоустроенная юрта на Ольхоне
+2026-11-12 17:01:43 [INFO] __main__: Запрашиваю private_house_dom_dlya_kompanii_forest_trail_1 (private_house_dom_dlya_kompanii_forest_trail_1)
+2026-11-12 17:01:44 [INFO] __main__: Сохранено 1 номеров для Частный дом Дом для компании FOREST TRAIL 1
+2026-11-12 17:01:44 [INFO] __main__: Запрашиваю severnye_sklony_guest_house_2 (severnye_sklony_guest_house_2)
+2026-11-12 17:01:45 [INFO] __main__: Сохранено 0 номеров для Северные склоны
+2026-11-12 17:01:45 [INFO] __main__: Запрашиваю rasko_home_more_spa_on_verkhnyaya_embankment_st (rasko_home_more_spa_on_verkhnyaya_embankment_st)
+2026-11-12 17:01:53 [INFO] __main__: Сохранено 0 номеров для Rasko Home| More & Spa на ул. Верхняя Набережная
+2026-11-12 17:01:53 [INFO] __main__: Запрашиваю gostevoy_dom_mandarkhan_obaykal (gostevoy_dom_mandarkhan_obaykal)
+2026-11-12 17:01:53 [INFO] __main__: Сохранено 1 номеров для Мандархан, о.Байкал
+2026-11-12 17:01:53 [INFO] __main__: Запрашиваю irkutsk_city_lodge_hostel (irkutsk_city_lodge_hostel)
+2026-11-12 17:01:57 [INFO] __main__: Сохранено 4 номеров для Irkutsk City Lodge (Иркутск Сити Лодж)
+2026-11-12 17:01:57 [INFO] __main__: Запрашиваю apart38_on_st_verkhnyaya_naberezhnaya_14511 (apart38_on_st_verkhnyaya_naberezhnaya_14511)
+2026-11-12 17:01:58 [INFO] __main__: Сохранено 0 номеров для Апарт38 на ул. Верхняя Набережная, д. 145/11
+2026-11-12 17:01:58 [INFO] __main__: Запрашиваю dom_kosmoszemlya_private_house (dom_kosmoszemlya_private_house)
+2026-11-12 17:01:58 [INFO] __main__: Сохранено 1 номеров для Частный дом Дом Космос-Земля
+2026-11-12 17:01:58 [INFO] __main__: Запрашиваю guest_house_mandarkhan (guest_house_mandarkhan)
+2026-11-12 17:02:01 [INFO] __main__: Сохранено 1 номеров для Мандархан
+2026-11-12 17:02:01 [INFO] __main__: Запрашиваю dom_4_s_panoramnym_vidom_na_ozero_private_house (dom_4_s_panoramnym_vidom_na_ozero_private_house)
+2026-11-12 17:02:02 [INFO] __main__: Сохранено 0 номеров для Частный дом Дом 4 с панорамным видом на озеро
+2026-11-12 17:02:02 [INFO] __main__: Запрашиваю svetly_aparthotel (svetly_aparthotel)
+2026-11-12 17:02:06 [INFO] __main__: Сохранено 1 номеров для Отель Светлый
+2026-11-12 17:02:06 [INFO] __main__: Запрашиваю gerhome_studiya_v_sovremennom_zhk_lodging_house (gerhome_studiya_v_sovremennom_zhk_lodging_house)
+2026-11-12 17:02:06 [INFO] __main__: Сохранено 1 номеров для Жилое Помещение Gerhome Студия в Современном Жк
+2026-11-12 17:02:06 [INFO] __main__: Запрашиваю shestimestny_u_samogo_serdtsa_baykala_private_house (shestimestny_u_samogo_serdtsa_baykala_private_house)
+2026-11-12 17:02:07 [INFO] __main__: Сохранено 0 номеров для Частный Дом Шестиместный у Самого Сердца Байкала
+2026-11-12 17:02:07 [INFO] __main__: Запрашиваю uyutnoye_gnyozdyshko_u_baykala_dlya_vashey_semyi_private_house (uyutnoye_gnyozdyshko_u_baykala_dlya_vashey_semyi_private_house)
+2026-11-12 17:02:08 [INFO] __main__: Сохранено 0 номеров для Частный дом Уютное Гнёздышко у Байкала для Вашей Семьи
+2026-11-12 17:02:08 [INFO] __main__: Запрашиваю treugolny_private_house (treugolny_private_house)
+2026-11-12 17:02:09 [INFO] __main__: Сохранено 0 номеров для Частный дом Треугольный
+2026-11-12 17:02:09 [INFO] __main__: Запрашиваю blagoustroennaya_yurta_na_olkhone_bungalow_2 (blagoustroennaya_yurta_na_olkhone_bungalow_2)
+2026-11-12 17:02:10 [INFO] __main__: Сохранено 1 номеров для Бунгало Благоустроенная юрта на Ольхоне
+2026-11-12 17:02:10 [INFO] __main__: Запрашиваю hi_loft_hostel_3 (hi_loft_hostel_3)
+2026-11-12 17:02:12 [INFO] __main__: Сохранено 2 номеров для Хостел Hi loft
+2026-11-12 17:02:12 [INFO] __main__: Запрашиваю matreshka_hotel (matreshka_hotel)
+2026-11-12 17:02:17 [INFO] __main__: Сохранено 7 номеров для Отель Матрешка
+2026-11-12 17:02:17 [INFO] __main__: Запрашиваю bajkal_severnoe_more_hotel (bajkal_severnoe_more_hotel)
+2026-11-12 17:02:19 [INFO] __main__: Сохранено 6 номеров для Отель Байкал - Северное Море
+2026-11-12 17:02:19 [INFO] __main__: Запрашиваю guest_house_svet_lany (guest_house_svet_lany)
+2026-11-12 17:02:19 [INFO] __main__: Сохранено 2 номеров для База отдыха Жемчужина Байкала
+2026-11-12 17:02:19 [INFO] __main__: Запрашиваю mini_barnhouse_private_house (mini_barnhouse_private_house)
+2026-11-12 17:02:21 [INFO] __main__: Сохранено 0 номеров для Частный дом Барнпарк МиниБарнхаус 1
+2026-11-12 17:02:21 [INFO] __main__: Запрашиваю gostevoy_dom_vorobyyovy_gory (gostevoy_dom_vorobyyovy_gory)
+2026-11-12 17:02:23 [INFO] __main__: Сохранено 6 номеров для Глэмпинг Воробьевы горы на Байкале
+2026-11-12 17:02:23 [INFO] __main__: Запрашиваю mini_barnhouse_private_house_2 (mini_barnhouse_private_house_2)
+2026-11-12 17:02:26 [INFO] __main__: Сохранено 0 номеров для Частный дом Барнпарк МиниБарнхаус 3
+2026-11-12 17:02:26 [INFO] __main__: Запрашиваю living_quarters_uyutnye_dlya_dvoikh (living_quarters_uyutnye_dlya_dvoikh)
+2026-11-12 17:02:27 [INFO] __main__: Сохранено 0 номеров для Меблированные комнаты Уютные для Двоих
+2026-11-12 17:02:27 [INFO] __main__: Запрашиваю luna_hotel_9 (luna_hotel_9)
+2026-11-12 17:02:31 [INFO] __main__: Сохранено 5 номеров для Отель Луна
+2026-11-12 17:02:31 [INFO] __main__: Запрашиваю v_sosnovom_boru_na_baykale_pinstan_private_house (v_sosnovom_boru_na_baykale_pinstan_private_house)
+2026-11-12 17:02:31 [INFO] __main__: Сохранено 1 номеров для Частный дом в сосновом бору на Байкале Пинстан
+2026-11-12 17:02:31 [INFO] __main__: Запрашиваю zvezda_kochevnika (zvezda_kochevnika)
+2026-11-12 17:02:34 [INFO] __main__: Сохранено 3 номеров для Гостевой дом Звезда Кочевника
+2026-11-12 17:02:34 [INFO] __main__: Запрашиваю siberia_9 (siberia_9)
+2026-11-12 17:02:37 [INFO] __main__: Сохранено 2 номеров для Сибирь
+2026-11-12 17:02:37 [INFO] __main__: Запрашиваю port_mikhalyov_recreation_camp (port_mikhalyov_recreation_camp)
+2026-11-12 17:02:39 [INFO] __main__: Сохранено 1 номеров для База Отдыха Порт Михалёв
+2026-11-12 17:02:39 [INFO] __main__: Запрашиваю cottage_na_chapaeva (cottage_na_chapaeva)
+2026-11-12 17:02:42 [INFO] __main__: Сохранено 1 номеров для Коттедж на Чапаева
+2026-11-12 17:02:42 [INFO] __main__: Запрашиваю kazachka_iya_hotel (kazachka_iya_hotel)
+2026-11-12 17:02:44 [INFO] __main__: Сохранено 0 номеров для Казачка Ия
+2026-11-12 17:02:44 [INFO] __main__: Запрашиваю lenatour (lenatour)
+2026-11-12 17:02:47 [INFO] __main__: Сохранено 4 номеров для Отель  Ленатур
+2026-11-12 17:02:47 [INFO] __main__: Запрашиваю hostel_royal_3 (hostel_royal_3)
+2026-11-12 17:02:48 [INFO] __main__: Сохранено 0 номеров для Хостел У Рояля
+2026-11-12 17:02:48 [INFO] __main__: Сохранено 832 номеров в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/rooms/2026-11-13.csv
+2026-11-12 17:02:48 [INFO] __main__: Парсинг завершён. Всего обработано 832 номеров.
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (29) > rooms_num (26) для hotel_anastasiya_2 — используем effective_rooms_num=29
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (28) > rooms_num (17) для hotel_pushkin_2 — используем effective_rooms_num=28
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (13) > rooms_num (11) для baykal_shale_guest_house — используем effective_rooms_num=13
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (63) > rooms_num (40) для armat_hotel — используем effective_rooms_num=63
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (12) > rooms_num (4) для chersky_hostel — используем effective_rooms_num=12
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (8) > rooms_num (6) для yolochka — используем effective_rooms_num=8
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (984) > rooms_num (156) для baikal_forest_hotel — используем effective_rooms_num=984
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (20) > rooms_num (7) для baikal_hostel — используем effective_rooms_num=20
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (16) > rooms_num (6) для gostevoy_dom_irkutskiy_kedr — используем effective_rooms_num=16
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (3) > rooms_num (2) для delight_guest_house_2 — используем effective_rooms_num=3
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (15) > rooms_num (7) для irkutsk_hostel_2 — используем effective_rooms_num=15
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (16) > rooms_num (15) для dom_baykal_guest_house — используем effective_rooms_num=16
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (56) > rooms_num (11) для hostel_diviziya — используем effective_rooms_num=56
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (35) > rooms_num (25) для gostevoj_dom_na_zvezdinskoj — используем effective_rooms_num=35
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (28) > rooms_num (8) для turbaza_usadba_nabaimar — используем effective_rooms_num=28
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (13) > rooms_num (9) для izumrud_hotel_7 — используем effective_rooms_num=13
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (16) > rooms_num (15) для arena_g_irkutsk — используем effective_rooms_num=16
+2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (30) > rooms_num (14) для gostevoi_dom_margobai — используем effective_rooms_num=30
+2026-11-12 17:02:49 [INFO] __main__: Статистика сохранена в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/statistics/2026-11-13.csv
+2026-11-12 17:02:49 [INFO] __main__: Обработано 446 отелей
