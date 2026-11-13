@@ -826,3 +826,182 @@
 2026-11-12 17:02:49 [WARNING] __main__: free_rooms_amount (30) > rooms_num (14) для gostevoi_dom_margobai — используем effective_rooms_num=30
 2026-11-12 17:02:49 [INFO] __main__: Статистика сохранена в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/statistics/2026-11-13.csv
 2026-11-12 17:02:49 [INFO] __main__: Обработано 446 отелей
+2026-11-13 15:59:39 [INFO] __main__: Режим CI: увеличенные таймауты и ожидание networkidle.
+2026-11-13 15:59:39 [INFO] __main__: Запуск парсера отелей...
+2026-11-13 15:59:39 [INFO] __main__: Даты бронирования: 14.11.2026 - 15.11.2026
+2026-11-13 15:59:40 [INFO] __main__: Страница 1, попытка 1/3
+2026-11-13 15:59:48 [INFO] __main__: Страница 1: новых 20, всего 20 / 310
+2026-11-13 15:59:48 [INFO] __main__: Страница 2, попытка 1/3
+2026-11-13 15:59:55 [INFO] __main__: Страница 2: новых 20, всего 40 / 310
+2026-11-13 15:59:55 [INFO] __main__: Страница 3, попытка 1/3
+2026-11-13 15:59:59 [INFO] __main__: Страница 3: новых 20, всего 60 / 310
+2026-11-13 15:59:59 [INFO] __main__: Страница 4, попытка 1/3
+2026-11-13 16:00:05 [INFO] __main__: Страница 4: новых 20, всего 80 / 310
+2026-11-13 16:00:05 [INFO] __main__: Страница 5, попытка 1/3
+2026-11-13 16:00:09 [INFO] __main__: Страница 5: новых 20, всего 100 / 310
+2026-11-13 16:00:09 [INFO] __main__: Страница 6, попытка 1/3
+2026-11-13 16:00:14 [INFO] __main__: Страница 6: новых 20, всего 120 / 310
+2026-11-13 16:00:14 [INFO] __main__: Страница 7, попытка 1/3
+2026-11-13 16:00:22 [INFO] __main__: Страница 7: новых 20, всего 140 / 310
+2026-11-13 16:00:22 [INFO] __main__: Страница 8, попытка 1/3
+2026-11-13 16:00:29 [INFO] __main__: Страница 8: новых 20, всего 160 / 310
+2026-11-13 16:00:29 [INFO] __main__: Страница 9, попытка 1/3
+2026-11-13 16:00:37 [INFO] __main__: Страница 9: новых 20, всего 180 / 310
+2026-11-13 16:00:37 [INFO] __main__: Страница 10, попытка 1/3
+2026-11-13 16:00:43 [INFO] __main__: Страница 10: новых 20, всего 200 / 310
+2026-11-13 16:00:43 [INFO] __main__: Страница 11, попытка 1/3
+2026-11-13 16:00:47 [INFO] __main__: Страница 11: новых 20, всего 220 / 310
+2026-11-13 16:00:47 [INFO] __main__: Страница 12, попытка 1/3
+2026-11-13 16:00:53 [INFO] __main__: Страница 12: новых 20, всего 240 / 310
+2026-11-13 16:00:53 [INFO] __main__: Страница 13, попытка 1/3
+2026-11-13 16:01:00 [INFO] __main__: Страница 13: новых 20, всего 260 / 310
+2026-11-13 16:01:00 [INFO] __main__: Страница 14, попытка 1/3
+2026-11-13 16:01:03 [INFO] __main__: Страница 14: новых 20, всего 280 / 310
+2026-11-13 16:01:03 [INFO] __main__: Страница 15, попытка 1/3
+2026-11-13 16:01:10 [INFO] __main__: Страница 15: новых 20, всего 300 / 310
+2026-11-13 16:01:10 [INFO] __main__: Страница 16, попытка 1/3
+2026-11-13 16:01:13 [INFO] __main__: Страница 16: новых 10, всего 310 / 310
+2026-11-13 16:01:13 [INFO] __main__: Поиск завершён: собрано 310 уникальных объектов, API сообщает 310
+2026-11-13 16:01:13 [INFO] __main__: Сохранено 310 отелей в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/hotels/2026-11-14.csv
+2026-11-13 16:01:13 [INFO] __main__: Парсинг завершён. Всего обработано 310 отелей.
+2026-11-13 16:01:13 [INFO] __main__: Каталог сохранён: 1447 отелей → /home/runner/work/ostrovok-parser/ostrovok-parser/catalog/hotels.csv
+2026-11-13 16:01:13 [INFO] __main__: Каталог обновлён: всего 1447, новых 0
+2026-11-13 16:01:15 [INFO] card_status: Карточка sobolinka_parkhotel_2: active (hotel_card_verified)
+2026-11-13 16:01:27 [INFO] card_status: Карточка olkhonstory_guest_house: active (hotel_card_verified)
+2026-11-13 16:01:29 [INFO] card_status: Карточка gostevoy_dom_sunrise: active (hotel_card_verified)
+2026-11-13 16:01:32 [INFO] card_status: Карточка minihotel_panda: active (hotel_card_verified)
+2026-11-13 16:01:35 [INFO] card_status: Карточка gostinitsa_undina: active (hotel_card_verified)
+2026-11-13 16:01:38 [INFO] card_status: Карточка baykal_guest_house_3: active (hotel_card_verified)
+2026-11-13 16:01:41 [INFO] card_status: Карточка nochleg_i_zavtrak_bb_shambala: active (hotel_card_verified)
+2026-11-13 16:01:45 [INFO] card_status: Карточка legend_of_baikal: active (hotel_card_verified)
+2026-11-13 16:01:48 [INFO] card_status: Карточка baikal_view_hotel: active (hotel_card_verified)
+2026-11-13 16:01:58 [INFO] card_status: Карточка less_guest_house: active (hotel_card_verified)
+2026-11-13 16:02:00 [INFO] card_status: Карточка vesta_hotel_3: active (hotel_card_verified)
+2026-11-13 16:02:16 [INFO] card_status: Карточка bajkalkemp: active (hotel_card_verified)
+2026-11-13 16:02:21 [INFO] card_status: Карточка hotel_sozvezdie_baikala: active (hotel_card_verified)
+2026-11-13 16:02:27 [INFO] card_status: Карточка gostevoy_dom_briz_3: active (hotel_card_verified)
+2026-11-13 16:02:31 [INFO] card_status: Карточка gostevoj_dom_otdyih_na_bajkale: active (hotel_card_verified)
+2026-11-13 16:02:34 [INFO] card_status: Карточка gostinitsa_akademicheskaya: active (hotel_card_verified)
+2026-11-13 16:02:37 [INFO] card_status: Карточка recreation_complex_altan: active (hotel_card_verified)
+2026-11-13 16:02:49 [INFO] card_status: Карточка hotel_nataly_2: active (hotel_card_verified)
+2026-11-13 16:02:53 [INFO] card_status: Карточка meridian_7: active (hotel_card_verified)
+2026-11-13 16:03:05 [INFO] card_status: Карточка dauria_hotel_2: active (hotel_card_verified)
+2026-11-13 16:03:08 [INFO] card_status: Карточка smart_hotel_kdo_irkutsk_hotel: active (hotel_card_verified)
+2026-11-13 16:03:17 [INFO] card_status: Карточка gostevoy_dom_forest_home: active (hotel_card_verified)
+2026-11-13 16:03:21 [INFO] card_status: Карточка pekin_hotel: active (hotel_card_verified)
+2026-11-13 16:03:25 [INFO] card_status: Карточка the_hotel_on_volzhskaya: active (hotel_card_verified)
+2026-11-13 16:03:37 [INFO] card_status: Карточка hotel_shvedka: active (hotel_card_verified)
+2026-11-13 16:03:40 [INFO] card_status: Карточка hotel_dacha_baikaleco: active (hotel_card_verified)
+2026-11-13 16:03:45 [INFO] card_status: Карточка gostevoy_dom_melodiya_baykala: active (hotel_card_verified)
+2026-11-13 16:03:47 [INFO] card_status: Карточка hotel_shishki: active (hotel_card_verified)
+2026-11-13 16:03:49 [INFO] card_status: Карточка mir_baykala_hotel: active (hotel_card_verified)
+2026-11-13 16:04:00 [INFO] card_status: Карточка vitim: active (hotel_card_verified)
+2026-11-13 16:04:07 [INFO] card_status: Карточка home_hotel_apartments_home_wanted_on_piskunov_street: active (hotel_card_verified)
+2026-11-13 16:04:18 [INFO] card_status: Карточка gostevoy_dom_isiger_baikal: active (hotel_card_verified)
+2026-11-13 16:04:20 [INFO] card_status: Карточка glemping_hygge_barn: active (hotel_card_verified)
+2026-11-13 16:04:23 [INFO] card_status: Карточка loft_house_38_guest_house: active (hotel_card_verified)
+2026-11-13 16:04:25 [INFO] card_status: Карточка north_star_hotel_9: active (hotel_card_verified)
+2026-11-13 16:04:28 [INFO] card_status: Карточка marx_hotel: active (hotel_card_verified)
+2026-11-13 16:04:37 [INFO] card_status: Карточка hotel_flagman_olkhona: active (hotel_card_verified)
+2026-11-13 16:04:50 [INFO] card_status: Карточка sportkompleks_ozerny_tulun_hotel: active (hotel_card_verified)
+2026-11-13 16:04:53 [INFO] card_status: Карточка vozdushnaya_gavan: active (hotel_card_verified)
+2026-11-13 16:05:11 [INFO] card_status: Карточка nebo_baykala_guest_house: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-13 16:05:13 [INFO] card_status: Карточка solnechny_guest_house_7: active (hotel_card_verified)
+2026-11-13 16:05:16 [INFO] card_status: Карточка u_istoka_hotel: active (hotel_card_verified)
+2026-11-13 16:05:20 [INFO] card_status: Карточка divobaykala_flat_1: active (hotel_card_verified)
+2026-11-13 16:05:23 [INFO] card_status: Карточка azatai_park_hotel: active (hotel_card_verified)
+2026-11-13 16:05:25 [INFO] card_status: Карточка apartments_viking_khaus: active (hotel_card_verified)
+2026-11-13 16:05:28 [INFO] card_status: Карточка hotel_star_of_baiakal: active (hotel_card_verified)
+2026-11-13 16:05:33 [INFO] card_status: Карточка spektr_2: active (hotel_card_verified)
+2026-11-13 16:05:43 [INFO] card_status: Карточка the_sky_of_lake_baikal: active (hotel_card_verified)
+2026-11-13 16:05:55 [INFO] card_status: Карточка geser_recreation_center: active (hotel_card_verified)
+2026-11-13 16:05:57 [INFO] card_status: Карточка baza_otdykha_gostiny_dvor_vdokhnovenie: active (hotel_card_verified)
+2026-11-13 16:06:00 [INFO] card_status: Карточка olkhon_inn: active (hotel_card_verified)
+2026-11-13 16:06:02 [INFO] card_status: Карточка recreation_centre_baikal_rainbow: active (hotel_card_verified)
+2026-11-13 16:06:07 [INFO] card_status: Карточка tsentr_otdykha_dashi: active (hotel_card_verified)
+2026-11-13 16:06:10 [INFO] card_status: Карточка baza_otdykha_olkhon: active (hotel_card_verified)
+2026-11-13 16:06:12 [INFO] card_status: Карточка olkhon_2: active (hotel_card_verified)
+2026-11-13 16:06:16 [INFO] card_status: Карточка gostevoy_dom_holiday_park_on_olkhon: active (hotel_card_verified)
+2026-11-13 16:06:19 [INFO] card_status: Карточка hotel_u_ruchyya: active (hotel_card_verified)
+2026-11-13 16:06:22 [INFO] card_status: Карточка hotel_complex_baikalov_ostrog: active (hotel_card_verified)
+2026-11-13 16:06:25 [INFO] card_status: Карточка guesthouse_dudeevukh: active (hotel_card_verified)
+2026-11-13 16:06:28 [INFO] card_status: Карточка rumyantseva_6_apartments: active (hotel_card_verified)
+2026-11-13 16:06:32 [INFO] card_status: Карточка inn_oasis_2: active (hotel_card_verified)
+2026-11-13 16:06:34 [INFO] card_status: Карточка baikalbabr: active (hotel_card_verified)
+2026-11-13 16:06:36 [INFO] card_status: Карточка v_gostyakh_u_dubrovskikh_guest_house: active (hotel_card_verified)
+2026-11-13 16:06:39 [INFO] card_status: Карточка hotel_baikal_krai: active (hotel_card_verified)
+2026-11-13 16:06:49 [INFO] card_status: Карточка guest_house_siberia_2: active (hotel_card_verified)
+2026-11-13 16:06:53 [INFO] card_status: Карточка tochka_baykala_hotel: active (hotel_card_verified)
+2026-11-13 16:06:56 [INFO] card_status: Карточка bolshoe_puteshestvie_hotel: active (hotel_card_verified)
+2026-11-13 16:06:59 [INFO] card_status: Карточка guest_house_baykal: active (hotel_card_verified)
+2026-11-13 16:07:02 [INFO] card_status: Карточка hotel_sayany: active (hotel_card_verified)
+2026-11-13 16:07:05 [INFO] card_status: Карточка gostevoj_dom_endemik: active (hotel_card_verified)
+2026-11-13 16:07:10 [INFO] card_status: Карточка lakeplacebaykal_living_quarters: active (hotel_card_verified)
+2026-11-13 16:07:12 [INFO] card_status: Карточка lakeplace_baikal_guest_house: active (hotel_card_verified)
+2026-11-13 16:07:15 [INFO] card_status: Карточка miniotel_gostinitsa_nerpenok: active (hotel_card_verified)
+2026-11-13 16:07:18 [INFO] card_status: Карточка guest_house_na_obrucheva: active (hotel_card_verified)
+2026-11-13 16:07:21 [INFO] card_status: Карточка hotel_irbis: active (hotel_card_verified)
+2026-11-13 16:07:25 [INFO] card_status: Карточка aura_baykala_guest_house: active (hotel_card_verified)
+2026-11-13 16:07:27 [INFO] card_status: Карточка hotel_olkhonhill: active (hotel_card_verified)
+2026-11-13 16:07:30 [INFO] card_status: Карточка gostevoy_dom_teremok_3: active (hotel_card_verified)
+2026-11-13 16:07:34 [INFO] card_status: Карточка odisseya: active (hotel_card_verified)
+2026-11-13 16:07:50 [INFO] card_status: Карточка khan_glamping_goloustnoe_khan_glamping_goloustnoe: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-13 16:07:51 [INFO] card_status: Карточка kakdoma_on_krasnokazachya_street: active (hotel_card_verified)
+2026-11-13 16:08:00 [INFO] card_status: Карточка baikalov_ostrog: unknown (hotel_identity_not_verified; hotel_identity_not_verified)
+2026-11-13 16:08:01 [INFO] card_status: Карточка irkutsk: active (hotel_card_verified)
+2026-11-13 16:08:12 [INFO] card_status: Карточка hotel_ochagof: active (hotel_card_verified)
+2026-11-13 16:08:14 [INFO] card_status: Карточка fregat_hotel_3: active (hotel_card_verified)
+2026-11-13 16:08:16 [INFO] card_status: Карточка apartamenty_sibirskie_puteshestviya_na_ul_lebedevakumacha_d_29: active (hotel_card_verified)
+2026-11-13 16:08:20 [INFO] card_status: Карточка trekhkomnatnaya_kvartira_okolo_festivalya_lodging_house: active (hotel_card_verified)
+2026-11-13 16:08:22 [INFO] card_status: Карточка berezka_aparthotel_2: active (hotel_card_verified)
+2026-11-13 16:08:32 [INFO] card_status: Карточка 777_hotel: active (hotel_card_verified)
+2026-11-13 16:08:46 [INFO] card_status: Карточка 130hotel_minihotel: active (hotel_card_verified)
+2026-11-13 16:08:49 [INFO] card_status: Карточка mini_hotel_usadyba1901: active (hotel_card_verified)
+2026-11-13 16:08:59 [INFO] card_status: Карточка hostel_bravo_: active (hotel_card_verified)
+2026-11-13 16:09:01 [INFO] card_status: Карточка prospekt_mini_hotel: active (hotel_card_verified)
+2026-11-13 16:09:12 [INFO] card_status: Карточка gk_malyij_hotel: active (hotel_card_verified)
+2026-11-13 16:09:23 [INFO] card_status: Карточка dobryi_kot: active (hotel_card_verified)
+2026-11-13 16:09:33 [INFO] card_status: Карточка arshan_mini_hotel: active (hotel_card_verified)
+2026-11-13 16:09:38 [INFO] card_status: Карточка miniotel_gostiny_dvorik: active (hotel_card_verified)
+2026-11-13 16:09:41 [INFO] card_status: Карточка magistral_6: active (hotel_card_verified)
+2026-11-13 16:09:46 [INFO] card_status: Карточка miniotel_khoromy: active (hotel_card_verified)
+2026-11-13 16:09:56 [INFO] card_status: Карточка chastny_dom_baykalskiy_dvorik_na_angarskoy_17v: active (hotel_card_verified)
+2026-11-13 16:10:02 [INFO] card_status: Карточка baza_otdykha_rosa: active (hotel_card_verified)
+2026-11-13 16:10:12 [INFO] card_status: Карточка guest_house_russky_dom_: active (hotel_card_verified)
+2026-11-13 16:10:15 [INFO] card_status: Карточка chilla_villa_black_guest_house: active (hotel_card_verified)
+2026-11-13 16:10:27 [INFO] card_status: Карточка guest_house_yolov_park: active (hotel_card_verified)
+2026-11-13 16:10:29 [INFO] card_status: Карточка chilla_villa_grand_villa_1: active (hotel_card_verified)
+2026-11-13 16:10:32 [INFO] card_status: Карточка chilla_villa_grand_guest_house: active (hotel_card_verified)
+2026-11-13 16:10:41 [INFO] card_status: Карточка rasko_design_home_on_piskunov_street: active (hotel_card_verified)
+2026-11-13 16:10:46 [INFO] card_status: Карточка chastny_dom_baykalskiy_dvorik_na_angarskoy_3a: active (hotel_card_verified)
+2026-11-13 16:10:55 [INFO] card_status: Карточка guest_house_u_baykala: active (hotel_card_verified)
+2026-11-13 16:11:00 [INFO] card_status: Карточка traditsionny_dlya_vashey_semyi_private_house: active (hotel_card_verified)
+2026-11-13 16:11:02 [INFO] card_status: Карточка liuks: active (hotel_card_verified)
+2026-11-13 16:11:04 [INFO] card_status: Карточка volkova_minihotel: active (hotel_card_verified)
+2026-11-13 16:11:13 [INFO] card_status: Карточка fortuna_50: active (hotel_card_verified)
+2026-11-13 16:11:15 [INFO] card_status: Карточка chastny_dom_aframe_na_malinovoy: active (hotel_card_verified)
+2026-11-13 16:11:18 [INFO] card_status: Карточка chastny_dom_khaytek_na_malinovoy_4: active (hotel_card_verified)
+2026-11-13 16:11:21 [INFO] card_status: Карточка mangutai_guest_house: active (hotel_card_verified)
+2026-11-13 16:11:30 [INFO] card_status: Карточка rasko_design_home_rasko_design_home_on_deputatskaya_street: active (hotel_card_verified)
+2026-11-13 16:11:39 [INFO] card_status: Карточка dlya_vecherinok_private_house: active (hotel_card_verified)
+2026-11-13 16:11:41 [INFO] card_status: Карточка dom_3_s_panoramnym_vidom_na_ozero_private_house: active (hotel_card_verified)
+2026-11-13 16:11:43 [INFO] card_status: Карточка dom_2_s_panoramnym_vidom_na_ozero_private_house: active (hotel_card_verified)
+2026-11-13 16:11:46 [INFO] card_status: Карточка recreation_camp_baykalskiy_kray: active (hotel_card_verified)
+2026-11-13 16:11:50 [INFO] card_status: Карточка rasko_design_home_on_4th_railway_street: active (hotel_card_verified)
+2026-11-13 16:11:54 [INFO] card_status: Карточка dom_na_centralnoj_19: active (hotel_card_verified)
+2026-11-13 16:11:58 [INFO] card_status: Карточка hotel_pavlin: active (hotel_card_verified)
+2026-11-13 16:12:01 [INFO] card_status: Карточка private_party_house: active (hotel_card_verified)
+2026-11-13 16:12:10 [INFO] card_status: Карточка glemping_khan_glamping_goloustnoye: active (hotel_card_verified)
+2026-11-13 16:12:19 [INFO] card_status: Карточка mini_hotel_gostiny_dvor_2: active (hotel_card_verified)
+2026-11-13 16:12:24 [INFO] card_status: Карточка dacha_baushevo_recreation_center: active (hotel_card_verified)
+2026-11-13 16:12:26 [INFO] card_status: Карточка dacha_baushevo: active (hotel_card_verified)
+2026-11-13 16:12:40 [INFO] card_status: Карточка mini_hotel_5_morey: active (hotel_card_verified)
+2026-11-13 16:12:50 [INFO] card_status: Карточка usadba_50_minihotel: active (hotel_card_verified)
+2026-11-13 16:13:02 [INFO] card_status: Карточка na_bajkale_na_gopnoj_private_house: active (hotel_card_verified)
+2026-11-13 16:13:05 [INFO] card_status: Карточка zemlya_private_house_2: active (hotel_card_verified)
+2026-11-13 16:13:07 [INFO] card_status: Карточка na_gornoy: active (hotel_card_verified)
+2026-11-13 16:13:13 [INFO] card_status: Карточка cozy_design_studio: active (hotel_card_verified)
+2026-11-13 16:13:24 [INFO] card_status: Карточка port_mikhalyov_recreation_camp: active (hotel_card_verified)
+2026-11-13 16:13:27 [INFO] __main__: Каталог сохранён: 1447 отелей → /home/runner/work/ostrovok-parser/ostrovok-parser/catalog/hotels.csv
+2026-11-13 16:13:27 [INFO] __main__: Сохранено 446 отелей в /home/runner/work/ostrovok-parser/ostrovok-parser/daily/hotels/2026-11-14.csv
+2026-11-13 16:13:27 [INFO] __main__: Дневной список после проверки каталога: 446 объектов
